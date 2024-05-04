@@ -1,0 +1,72 @@
+.hero {
+  position: relative; /* Ensure the container is positioned relatively */
+  background-image: url("../../../../public/images/HomeMar.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 90vh;
+  width: 100%;
+  color: #fff;
+}
+
+.hero::before {
+  content: ""; /* Necessary for pseudo-elements */
+  position: absolute; /* Position the pseudo-element relative to its parent */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adjust the alpha value (0.5) for transparency */
+  z-index: 1; /* Set the z-index to be above the background image */
+}
+
+.hero .container {
+  position: relative; /* Ensure the container is positioned relatively */
+  z-index: 2; /* Set a higher z-index for the container to be above the overlay */
+  padding-top: 10%;
+  line-height: 40px;
+  text-align: center;
+  align-self: center;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 100px;
+  line-height: 125px;
+  margin-top: -20px;
+}
+
+.hero p {
+  color: #fff;
+  opacity: 0.8;
+}
+.hero h3 {
+  font-size: 18px;
+}
+
+.hero h3:first-of-type {
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .hero .container {
+    padding-top: 20%;
+  }
+
+  .hero h1 {
+    color: #fff;
+    font-size: 70px;
+    line-height: 90px;
+  }
+  .hero p {
+    font-size: 15px;
+  }
+  .hero h3 {
+    font-size: 13px;
+  }
+}
