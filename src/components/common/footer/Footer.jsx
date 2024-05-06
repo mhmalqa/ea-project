@@ -12,7 +12,7 @@ const Footer = ({ language }) => {
         <div className="container grid3">
           <div className="box">
             <div className="logo">
-              <img src="../../../../public/images/logo-light.png" alt="" />
+              <img src="./images/logo-light.png" alt="logo-light" />
 
               <h2>
                 {language === "arabic"
