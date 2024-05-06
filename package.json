@@ -1,7 +1,7 @@
 {
   "name": "elim-alriyada",
   "version": "0.1.0",
-  "homepage": "https://mhmalqa.github.io/ea-project",
+  "homepage": "https://mhmalqa.github.io/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
