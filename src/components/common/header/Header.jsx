@@ -13,7 +13,7 @@ const Header = ({ language, setLanguage }) => {
       <div className="container flex">
         <div className="logo">
           <Link to="/">
-            <img src="./images/logo.png" alt="logo" />
+            <img src="../../../../public/images/logo.png" alt="logo" />
           </Link>
         </div>
 
@@ -26,7 +26,6 @@ const Header = ({ language, setLanguage }) => {
                 </Link>
               </li>
             ))}
-            
 
             {navList && (
               <li>

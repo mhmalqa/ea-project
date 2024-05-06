@@ -4,6 +4,7 @@ import "./hero.css";
 import { homePage } from "../../data/Data";
 import React, { useState } from "react";
 
+
 // Assuming this JSX section is inside a React component
 const HeroSection = ({ language }) => {
   // Find the correct language object

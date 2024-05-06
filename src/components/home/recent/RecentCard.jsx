@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { list } from "../../data/Data"; // استبدل "yourListFile" بمسار ملف القائمة الخاص بك
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 const RecentCard = ({ language }) => {
   // حالة لتخزين العناصر العشوائية
   const [randomItems, setRandomItems] = useState([]);
+  const [open, setOpen] = React.useState(false);
 
   // تحديث العناصر العشوائية عند كل تحديث
   useState(() => {
@@ -62,7 +65,10 @@ const RecentCard = ({ language }) => {
               </div>
               <div className="button flex">
                 <div>
-                  <button className="btn2">SAR {price}</button>
+                  <button className="btn2" onClick={() => setOpen(true)}>
+                    SAR {price}
+                  </button>
+                  
                 </div>
                 <span>{itemType}</span>
               </div>

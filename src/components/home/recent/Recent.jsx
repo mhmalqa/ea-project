@@ -14,6 +14,7 @@ const Recent = ({ language }) => {
   return (
     <>
       <section className="recent padding">
+
         <div className="container">
           {/* استخدام العنوان والعنوان الفرعي المحدد بناءً على اللغة */}
           <Heading title={title} subtitle={subtitle} />

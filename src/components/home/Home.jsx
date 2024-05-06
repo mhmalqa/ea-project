@@ -2,10 +2,7 @@ import React from "react";
 import Awards from "./awards/Awards";
 import Sectors from "./featured/Featured";
 import Hero from "./hero/Hero";
-import Location from "./location/Location";
-import Price from "./price/Price";
 import Recent from "./recent/Recent";
-import Team from "./team/Team";
 import About from "../about/About";
 import Services from "../services/Services";
 import Contact from "../contact/Contact";
@@ -19,10 +16,9 @@ const Home = (props) => {
       <Awards language={props.language} />
       <About language={props.language} inHome="true" />
       <Contact language={props.language} inHome="true" />
-
       <Sectors language={props.language} />
 
-        {/* <Location language={props.language} /> 
+      {/* <Location language={props.language} /> 
       <Team language={props.language} /> 
        <Price language={props.language} />  */}
     </>
