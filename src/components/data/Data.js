@@ -44,35 +44,35 @@ export const homePage = [
 
 export const sectors = [
   {
-    cover: "./images/hero/h4.png",
+    cover: `${process.env.PUBLIC_URL}/images/hero/h4.png`,
     name: "القطاع التجاري",
     name_en: "Commercial Sector",
     total: "الوصف",
     total_en: "Description",
   },
   {
-    cover: "./images/hero/h2.png",
+    cover: `${process.env.PUBLIC_URL}/images/hero/h2.png`,
     name: "القطاع الصناعي",
     name_en: "Industrial Sector",
     total: "الوصف",
     total_en: "Description",
   },
   {
-    cover: "./images/hero/h3.png",
+    cover: `${process.env.PUBLIC_URL}/images/hero/h3.png`,
     name: "القطاع التعليمي",
     name_en: "Educational Sector",
     total: "الوصف",
     total_en: "Description",
   },
   {
-    cover: "./images/hero/h1.png",
+    cover: `${process.env.PUBLIC_URL}/images/hero/h1.png`,
     name: "القطاع الترفيهي",
     name_en: "Entertainment Sector",
     total: "الوصف",
     total_en: "Description",
   },
   {
-    cover: "./images/hero/h6.png",
+    cover: `${process.env.PUBLIC_URL}/images/hero/h6.png`,
     name: "القطاع الخدمي",
     name_en: "Service Sector",
     total: "الوصف",
@@ -158,7 +158,7 @@ export const services = [
 export const list = [
   {
     id: 1,
-    cover: "./images/list/p-1.png",
+    cover: process.env.PUBLIC_URL + "/images/list/p-1.png",
     name: "شقه فاخره في فيلا بحي اليرموك",
     name_en: "Luxurious Apartment in Yarmouk District",
     location: "السعودية - جدة",
@@ -172,7 +172,7 @@ export const list = [
   },
   {
     id: 2,
-    cover: "./images/list/p-2.png",
+    cover: process.env.PUBLIC_URL + "/images/list/p-2.png",
     name: "شقة في عمارة - الرياض حي طويق",
     name_en: "Apartment in Building - Riyadh, Tawiq District",
     location: "طويق الرياض, الرياض",
@@ -186,7 +186,7 @@ export const list = [
   },
   {
     id: 3,
-    cover: "./images/list/p-7.png",
+    cover: process.env.PUBLIC_URL + "/images/list/p-7.png",
     name: "فيلا دوبلكس للبيع بحي المونسية",
     name_en: "Duplex Villa for Sale in Al-Monsia District",
     location: "المونسية الرياض, الرياض",
@@ -200,7 +200,7 @@ export const list = [
   },
   {
     id: 1,
-    cover: "./images/list/p-1.png",
+    cover: process.env.PUBLIC_URL + "/images/list/p-1.png",
     name: "شقه فاخره في فيلا بحي اليرموك",
     name_en: "Luxurious Apartment in Yarmouk District",
     location: "السعودية - جدة",
@@ -214,7 +214,7 @@ export const list = [
   },
   {
     id: 2,
-    cover: "./images/list/p-2.png",
+    cover: process.env.PUBLIC_URL + "/images/list/p-2.png",
     name: "شقة في عمارة - الرياض حي طويق",
     name_en: "Apartment in Building - Riyadh, Tawiq District",
     location: "طويق الرياض, الرياض",
@@ -228,7 +228,7 @@ export const list = [
   },
   {
     id: 3,
-    cover: "./images/list/p-7.png",
+    cover: process.env.PUBLIC_URL + "/images/list/p-7.png",
     name: "فيلا دوبلكس للبيع بحي المونسية",
     name_en: "Duplex Villa for Sale in Al-Monsia District",
     location: "المونسية الرياض, الرياض",
@@ -242,7 +242,7 @@ export const list = [
   },
   {
     id: 1,
-    cover: "./images/list/p-1.png",
+    cover: process.env.PUBLIC_URL + "/images/list/p-1.png",
     name: "شقه فاخره في فيلا بحي اليرموك",
     name_en: "Luxurious Apartment in Yarmouk District",
     location: "السعودية - جدة",
@@ -256,7 +256,7 @@ export const list = [
   },
   {
     id: 2,
-    cover: "./images/list/p-2.png",
+    cover: process.env.PUBLIC_URL + "/images/list/p-2.png",
     name: "شقة في عمارة - الرياض حي طويق",
     name_en: "Apartment in Building - Riyadh, Tawiq District",
     location: "طويق الرياض, الرياض",
@@ -270,7 +270,7 @@ export const list = [
   },
   {
     id: 3,
-    cover: "./images/list/p-7.png",
+    cover: process.env.PUBLIC_URL + "/images/list/p-7.png",
     name: "فيلا دوبلكس للبيع بحي المونسية",
     name_en: "Duplex Villa for Sale in Al-Monsia District",
     location: "المونسية الرياض, الرياض",

@@ -72,7 +72,10 @@ const About = (props) => {
 
           {!showBackButton && (
             <div className="right row">
-              <img src="./about us.jpg" alt="About Us" />
+              <img
+                src={process.env.PUBLIC_URL + "/about us.jpg"}
+                alt="About Us"
+              />
             </div>
           )}
         </div>
