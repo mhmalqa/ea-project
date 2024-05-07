@@ -14,7 +14,7 @@ const Header = ({ language, setLanguage }) => {
       <div className="container flex">
         <div className="logo">
           <Link to={homepage}>
-            <img src={`${homepage}/images/logo.png`} alt="logo" />
+            <img src={`${homepage}/images/logo-2030.png`} alt="logo" />
           </Link>
         </div>
 

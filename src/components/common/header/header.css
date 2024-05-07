@@ -10,8 +10,9 @@ header {
   z-index: 100;
 }
 header img {
-  width: 180px;
+  width: 330px;
   padding: 10px;
+  margin: 0 -120px;
 }
 .icons {
   text-align: center;
@@ -99,7 +100,8 @@ header .toggle {
     padding-top: 10px;
   }
   header img {
-    width: 130px;
+    width: 220px;
+    margin: 0 80px;
   }
   header .button {
     display: none;
