@@ -7,13 +7,14 @@ import { BtnLogin } from "./btn-login";
 
 const Header = ({ language, setLanguage }) => {
   const [navList, setNavList] = useState(false);
+  const homepage = process.env.PUBLIC_URL || "/"; // تحديد الرابط الرئيسي
 
   return (
     <header>
       <div className="container flex">
         <div className="logo">
-          <Link to="/">
-            <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="logo" />
+          <Link to={homepage}>
+            <img src={`${homepage}/images/logo.png`} alt="logo" />
           </Link>
         </div>
 

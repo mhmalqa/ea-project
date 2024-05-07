@@ -24,7 +24,6 @@ const Pages = () => {
       <Router>
         <Header language={language} setLanguage={setLanguage} />
         <Switch>
-          <Redirect exact from="/" to="/home" />
           <Route
             exact
             path="/home"
@@ -41,7 +40,8 @@ const Pages = () => {
           <Route path="/blog" component={Blog} />
           <Route path="/pricing" component={Pricing} />
           <Route path="/contact" component={Contact} />
-          <Route path="/image" component={() => <ViewImage />} />
+          <Route path="/image" component={ViewImage} />
+          <Redirect from="/" to="/home" />
         </Switch>
         <Footer language={language} />
       </Router>
