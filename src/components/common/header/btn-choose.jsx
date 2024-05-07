@@ -19,7 +19,9 @@ export function BtnChoose({ currentLanguage, setLanguage }) {
       onChange={(e) => handleLanguageToggle(e.target.value)}
     >
       <option value="arabic">عربي</option>
-      <option value="english">English</option>
+      <option value="english" selected>
+        English
+      </option>
     </select>
   );
 }

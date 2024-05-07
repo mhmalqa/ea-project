@@ -51,6 +51,29 @@
   margin-top: 20px;
 }
 
+.heading {
+  /*تحديدالتأثير*/animation: slideFromRight 2s ease forwards;
+  /*تعيينالموقعوالتنسيقالأساسي*/opacity: 0;
+  transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  -o-transform: translateX(100%);
+}
+
+/* تعريف التأثير */
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+
 @media screen and (max-width: 800px) {
   .hero .container {
     justify-content: center;
