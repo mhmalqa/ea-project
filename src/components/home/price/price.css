@@ -28,14 +28,16 @@
 }
 
 @media screen and (max-width: 800px) {
-  .price .content {
-    flex-direction: column;
-  }
-
-  .price .content .box {
-    width: 80%;
-    padding: 30px;
-    border-radius: 10px;
-    margin-bottom: 50px;
+  .price .content .slide-post {
+    display: flex;
+    width: 120%;
+    margin: 0 auto;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
   }
 }
