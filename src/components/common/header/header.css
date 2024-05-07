@@ -93,7 +93,7 @@ header .toggle {
   font-size: 15px;
 }
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 903px) {
   header {
     height: auto;
     padding-top: 10px;

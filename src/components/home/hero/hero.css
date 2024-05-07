@@ -28,10 +28,8 @@
 .hero .container {
   position: relative; /* Ensure the container is positioned relatively */
   z-index: 2; /* Set a higher z-index for the container to be above the overlay */
-  padding-top: 10%;
+  padding-top: 7%;
   line-height: 40px;
-  text-align: center;
-  align-self: center;
 }
 
 .hero h1 {
@@ -56,18 +54,21 @@
 @media screen and (max-width: 800px) {
   .hero .container {
     padding-top: 20%;
+    align-items: center;
   }
 
   .hero h1 {
     color: #fff;
     font-size: 70px;
-    line-height: 90px;
+    line-height: 80px;
   }
   .hero p {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 20px;
   }
   .hero h3 {
     font-size: 13px;
+    line-height: 30px;
   }
 }
 @media screen and (max-width: 980px) and (max-height: 450px) {
