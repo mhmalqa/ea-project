@@ -116,7 +116,7 @@ header .toggle {
   }
   header .small {
     position: absolute;
-    top: 6.2vh;
+    top: 9.2vh;
     left: 0;
     width: 100%;
     background-color: #276dae;
@@ -149,7 +149,7 @@ header .toggle {
   }
   header .small {
     position: absolute;
-    top: 6.2vh;
+    top: 9.2vh;
     left: 0;
     width: 100%;
     background-color: #276dae;
@@ -161,4 +161,3 @@ header .toggle {
     color: #fff;
   }
 }
-

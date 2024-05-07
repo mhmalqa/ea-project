@@ -110,4 +110,9 @@
     margin-bottom: 20px;
     color: #fff;
   }
+  .icons a i {
+    margin: 8px;
+    font-size: 25px;
+    color: floralwhite;
+  }
 }

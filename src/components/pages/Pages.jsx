@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import Header from "../common/header/Header";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Home from "../home/Home";
+import Header from "../common/header/Header";
 import Footer from "../common/footer/Footer";
 import About from "../about/About";
 import Pricing from "../pricing/Pricing";
@@ -12,33 +17,31 @@ import { ViewImage } from "../home/recent/view_properties/slideView";
 
 const Pages = () => {
   const [language, setLanguage] = useState(localStorage.getItem("language"));
-  document.querySelector("html").dir = language === "arabic" ? "rtl" : "ltr"; // تعريف الحالة والدالة هنا
+  document.querySelector("html").dir = language === "arabic" ? "rtl" : "ltr";
 
   return (
     <>
       <Router>
-        {/* تمرير الحالة والدالة كمعلمات إلى مكون الرأس */}
         <Header language={language} setLanguage={setLanguage} />
         <Switch>
+          <Redirect exact from="/" to="/home" />
           <Route
             exact
-            path="/"
+            path="/home"
             component={() => <Home language={language} />}
           />
           <Route
-            exact
             path="/about"
             component={() => <About language={language} />}
           />
           <Route
-            exact
             path="/services"
             component={() => <Services language={language} />}
           />
-          <Route exact path="/blog" component={Blog} />
-          <Route exact path="/pricing" component={Pricing} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/image" component={() => <ViewImage />} />
+          <Route path="/blog" component={Blog} />
+          <Route path="/pricing" component={Pricing} />
+          <Route path="/contact" component={Contact} />
+          <Route path="/image" component={() => <ViewImage />} />
         </Switch>
         <Footer language={language} />
       </Router>
