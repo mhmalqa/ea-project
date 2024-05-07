@@ -16,6 +16,7 @@ const HeroSection = ({ language }) => {
         <Heading
           title={languageObject.title}
           subtitle={languageObject.subtitle}
+          slogan={languageObject.slogan}
           description={languageObject.description}
           description2={languageObject.description2}
           btn_view={languageObject.btn_view}

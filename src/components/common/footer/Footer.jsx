@@ -12,12 +12,15 @@ const Footer = ({ language }) => {
         <div className="container grid3">
           <div className="box">
             <div className="logo">
-              <img src="./images/logo-light.png" alt="logo-light" />
+              <img
+                src={`${process.env.PUBLIC_URL}/images/logo-light.png`}
+                alt="logo-light"
+              />
 
               <h2>
                 {language === "arabic"
-                  ? "لتحقيق نجاح مؤسستك"
-                  : "To Achieve Success for Your Institution"}
+                  ? "التحول نحو النجاح"
+                  : "Shift to Success"}
               </h2>
               <p>
                 {language === "arabic"

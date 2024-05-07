@@ -26,6 +26,7 @@ export const homePage = [
     language: "arabic",
     title: "علم الريادة",
     subtitle: "علم الريادة للاستشارات الإدارية والمالية",
+    slogan: "التحول نحو النجاح",
     description: "لتحقيق نجاح مؤسستك",
     description2:
       "استشارات إدارية - استشارات مالية - تسويق - تطوير- استشارات حلول تمويل ",
@@ -34,6 +35,7 @@ export const homePage = [
   {
     language: "english",
     title: "Elim Alriyada",
+    slogan: "Shift to Success",
     subtitle: "For Administrative and Financial Consultations",
     description: "To achieve success for your institution",
     description2:
@@ -84,8 +86,8 @@ export const services = [
   {
     id: 1,
     cover: "./images/hero/h4.png",
-    name: "دراسة الجدوى الاقتصادية المعتمدة",
-    name_en: "Commercial Sector",
+    name: "دراسة الجدوى الاقتصادية",
+    name_en: "Economic Feasibility Study",
     desc_b: "الوصف",
     desc_b_en: "Description",
     desc_f:

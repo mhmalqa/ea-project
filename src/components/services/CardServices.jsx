@@ -14,7 +14,7 @@ const CardServices = (props) => {
   };
   const handleOrderNowClick = () => {
     const serviceName = props.name; // اسم الخدمة
-    const url = `./contact?service=${encodeURIComponent(serviceName)}`;
+    const url = `/contact?service=${encodeURIComponent(serviceName)}`;
     window.location.href = url;
   };
 

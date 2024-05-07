@@ -13,7 +13,7 @@ const Header = ({ language, setLanguage }) => {
       <div className="container flex">
         <div className="logo">
           <Link to="/">
-            <img src="./images/logo.png" alt="logo" />
+            <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="logo" />
           </Link>
         </div>
 

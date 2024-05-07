@@ -1,12 +1,11 @@
-
-export function SocialMedia({ insta, facebook, x, phone }) {
+export function SocialMedia({ insta, linktr, x, phone }) {
   return (
     <div className="icons">
       <a href={insta}>
         <i class="fa-brands fa-instagram"></i>
       </a>
-      <a href={facebook}>
-        <i class="fa-brands fa-facebook"></i>
+      <a href={linktr}>
+        <i class="fa-brands fa-linkedin-in"></i>
       </a>
       <a href={phone}>
         <i class="fa-brands fa-whatsapp"></i>

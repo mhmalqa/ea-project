@@ -1,6 +1,6 @@
 .hero {
   position: relative; /* Ensure the container is positioned relatively */
-  background-image: url("../../../../public/images/HomeMar.jpg");
+  background-image: url("../../../../public/images/office.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -68,5 +68,46 @@
   }
   .hero h3 {
     font-size: 13px;
+  }
+}
+@media screen and (max-width: 980px) and (max-height: 450px) {
+  .hero .container {
+    line-height: 20px;
+    padding-top: 2%;
+  }
+
+  .hero h1 {
+    color: #fff;
+    font-size: 70px;
+    margin-top: -15px;
+  }
+  .hero p {
+    font-size: 10px;
+  }
+  .hero h3 {
+    font-size: 11px;
+  }
+  header .button {
+    display: none;
+  }
+  header .nav .flex {
+    display: none;
+  }
+  header .toggle {
+    display: block;
+    margin-top: 2px;
+  }
+  header .small {
+    position: absolute;
+    top: 20vh;
+    left: 0;
+    width: 100%;
+    background-color: #276dae;
+    padding: 20px;
+  }
+  header li a {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: #fff;
   }
 }
