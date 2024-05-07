@@ -1,54 +1,33 @@
-import React from "react"
-import { price } from "../../data/Data"
+import React, { useState, useEffect } from "react";
+import { posts } from "../../data/Data";
 
 const PriceCard = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === posts.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 3000); // تحديث الصورة كل 3 ثوانٍ
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <>
-      <div className='content flex mtop'>
-        {price.map((item, index) => (
-          <div className='box shadow' key={index}>
-            <div className='topbtn'>
-              <button className='btn3'>{item.best}</button>
-            </div>
-            <h3>{item.plan}</h3>
-            <h1>
-              <span>$</span>
-              {item.price}
-            </h1>
-            <p>{item.ptext}</p>
-
-            <ul>
-              {item.list.map((val) => {
-                const { icon, text, change } = val
-                return (
-                  <li>
-                    <label
-                      style={{
-                        background: change === "color" ? "#dc35451f" : "#27ae601f",
-                        color: change === "color" ? "#dc3848" : "#27ae60",
-                      }}
-                    >
-                      {icon}
-                    </label>
-                    <p>{text}</p>
-                  </li>
-                )
-              })}
-            </ul>
-            <button
-              className='btn5'
-              style={{
-                background: item.plan === "Standard" ? "#27ae60" : "#fff",
-                color: item.plan === "Standard" ? "#fff" : "#27ae60",
-              }}
-            >
-              Start {item.plan}
-            </button>
-          </div>
-        ))}
+    <div className="post-align">
+      <div className="content flex">
+        <div className="slide-post">
+          <img
+            className="center-image"
+            src={process.env.PUBLIC_URL + posts[currentImageIndex].img}
+            alt={posts[currentImageIndex].alt}
+            srcSet={posts[currentImageIndex].srcSet}
+          />
+        </div>
       </div>
-    </>
-  )
-}
+    </div>
+  );
+};
 
-export default PriceCard
+export default PriceCard;
