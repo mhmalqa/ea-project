@@ -101,7 +101,7 @@ header .toggle {
   }
   header img {
     width: 220px;
-    margin: 0 80px;
+    margin: 0 0;
   }
   header .button {
     display: none;
