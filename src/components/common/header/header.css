@@ -76,22 +76,33 @@ header .toggle {
   display: none;
 }
 .language-menu {
-  border-radius: 5px;
-  padding: 10px 2px;
+  border-radius: 15px;
+  padding: 8px 2px;
   background: #36a036;
   border: none;
   color: #fff;
   cursor: pointer;
   font-weight: bold;
-  margin: 0px 5px 15px 5px;
-  font-size: 11px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
+  margin: 0px -25px 0px -25px;
+  font-size: 13px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 .language-menu option {
-  font-size: 15px;
+  font-size: 13px;
+}
+.btn-login {
+  background-color: #276dae;
+  border-radius: 15px;
+  color: #fff;
+  margin: 0 30px 0;
+  font-size: 13px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
 }
 
 @media screen and (max-width: 903px) {
