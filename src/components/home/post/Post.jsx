@@ -1,9 +1,9 @@
 import React from "react";
-import Heading from "../../common/Heading";
-import "./price.css";
-import PriceCard from "./PriceCard";
+// import Heading from "../../common/Heading";
+import "./post.css";
+import PostCard from "./PostCard";
 
-const Price = () => {
+const Post = () => {
   return (
     <>
       <section className="price">
@@ -14,11 +14,11 @@ const Price = () => {
         />
         <div className="container">
           {/* <Heading title='Select Your Package' subtitle='At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores' /> */}
-          <PriceCard />
+          <PostCard />
         </div>
       </section>
     </>
   );
 };
 
-export default Price;
+export default Post;
