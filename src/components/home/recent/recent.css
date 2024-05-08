@@ -43,5 +43,6 @@
 
   .title-rel h1 {
     font-size: 14px; /* تحديد حجم النص */
+    margin-top: 100px;
   }
 }
