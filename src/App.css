@@ -185,6 +185,7 @@ img {
 .mb {
   margin-bottom: 80px;
 }
+
 @media screen and (max-width: 1138px) {
   .grid4,
   .grid5 {

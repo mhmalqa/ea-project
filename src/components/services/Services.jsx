@@ -4,6 +4,7 @@ import Back from "../common/Back";
 import CardServices from "./CardServices";
 import { services } from "../data/Data";
 import Heading from "../common/Heading";
+import "./CardServices.module.css";
 
 const Services = ({ language, inHome }) => {
   const title = language === "arabic" ? "الخدمات" : "Services";

@@ -29,7 +29,7 @@ export const homePage = [
     slogan: "التحول نحو النجاح",
     description: "لتحقيق نجاح مؤسستك",
     description2:
-      "استشارات إدارية - استشارات مالية - تسويق - تطوير- استشارات حلول تمويل ",
+      "استشارات إدارية - استشارات مالية - تسويق - تطوير - استشارات حلول تمويل - خدمات تسويق عقاري",
     btn_view: "اعرف المزيد . . .",
   },
   {
@@ -39,7 +39,7 @@ export const homePage = [
     subtitle: "For Administrative and Financial Consultations",
     description: "To achieve success for your institution",
     description2:
-      "Administrative Consultations - Financial Consultations - Marketing - Development - Financing Solutions Consultations",
+      "Administrative Consultations - Financial Consultations - Marketing - Development - Financing Solutions Consultations - Real Estate Marketing Services",
     btn_view: "Learn more . . .",
   },
 ];
@@ -49,36 +49,36 @@ export const sectors = [
     cover: `${process.env.PUBLIC_URL}/images/hero/h4.png`,
     name: "القطاع التجاري",
     name_en: "Commercial Sector",
-    total: "الوصف",
-    total_en: "Description",
+    total: "",
+    total_en: "",
   },
   {
     cover: `${process.env.PUBLIC_URL}/images/hero/h2.png`,
     name: "القطاع الصناعي",
     name_en: "Industrial Sector",
-    total: "الوصف",
-    total_en: "Description",
+    total: "",
+    total_en: "",
   },
   {
     cover: `${process.env.PUBLIC_URL}/images/hero/h3.png`,
     name: "القطاع التعليمي",
     name_en: "Educational Sector",
-    total: "الوصف",
-    total_en: "Description",
+    total: "",
+    total_en: "",
   },
   {
     cover: `${process.env.PUBLIC_URL}/images/hero/h1.png`,
     name: "القطاع الترفيهي",
     name_en: "Entertainment Sector",
-    total: "الوصف",
-    total_en: "Description",
+    total: "",
+    total_en: "",
   },
   {
     cover: `${process.env.PUBLIC_URL}/images/hero/h6.png`,
     name: "القطاع الخدمي",
     name_en: "Service Sector",
-    total: "الوصف",
-    total_en: "Description",
+    total: "",
+    total_en: "",
   },
 ];
 
@@ -457,38 +457,44 @@ export const team = [
     ],
   },
 ];
-export const posts = [
-  {
-    img: "/images/posts/post1.png",
-    alt: "Post 1",
-    srcSet: "",
-  },
-  {
-    img: "/images/posts/post2.jpg",
-    alt: "Post 2",
-    srcSet: "",
-  },
-  {
-    img: "/images/posts/post3.jpg",
-    alt: "Post 3",
-    srcSet: "",
-  },
-  {
-    img: "/images/posts/post1.png",
-    alt: "Post 4",
-    srcSet: "",
-  },
-  {
-    img: "/images/posts/post3.jpg",
-    alt: "Post 3",
-    srcSet: "",
-  },
-  {
-    img: "/images/posts/post3.jpg",
-    alt: "Post 3",
-    srcSet: "",
-  },
-];
+export const posts = {
+  post_rel: [
+    {
+      img: "/images/posts/post2.jpg",
+      alt: "Post 2",
+      srcSet: "",
+    },
+    {
+      img: "/images/posts/post3.jpg",
+      alt: "Post 3",
+      srcSet: "",
+    },
+  ],
+  post_sol: [
+    {
+      img: "/images/posts/post3.jpg",
+      alt: "Post 3",
+      srcSet: "",
+    },
+    {
+      img: "/images/posts/post2.jpg",
+      alt: "Post 2",
+      srcSet: "",
+    },
+  ],
+  post_adm: [
+    {
+      img: "/images/posts/post2.jpg",
+      alt: "Post 2",
+      srcSet: "",
+    },
+    {
+      img: "/images/posts/post3.jpg",
+      alt: "Post 8",
+      srcSet: "",
+    },
+  ],
+};
 
 export const footer = [
   {

@@ -1,43 +1,65 @@
 .price {
-  text-align: center;
+  padding: 14px 0;
+  background-image: url(../../../../public/images/shape/h3_blog_shape01.png);
+  background-repeat: no-repeat;
+  background-position: right bottom -120px;
+  position: relative;
 }
+.price .img-back {
+  position: absolute;
+  z-index: -2;
+  width: 320px;
+  height: 320px;
+}
+
 .price .content .slide-post {
   display: flex;
-  width: 42%;
-  margin: 0 auto;
-  padding: 5px;
-  margin: 5px;
-  border-radius: 20px;
-  -webkit-border-radius: 20px;
-  -moz-border-radius: 20px;
-  -ms-border-radius: 20px;
-  -o-border-radius: 20px;
+  width: 33%;
+  margin: 15px 0px;
+  box-shadow: 1px 6px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 3%;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  -webkit-border-radius: 3%;
+  -moz-border-radius: 3%;
+  -ms-border-radius: 3%;
+  -o-border-radius: 3%;
 }
-.post-align .flex {
+.slide-post {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  transition: transform 0.5s ease-in-out; /* تطبيق تأثير الانتقال على خاصية التحويل */
 }
+
+.slide-post img {
+  transition: transform 0.5s ease-in-out; /* تطبيق تأثير الانتقال على الصور */
+}
+
 .center-image {
   display: block;
 }
-.posts-view .flex {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+
+/* تضمين تأثير الانتقال عند تغيير خاصية transform */
+.slide-post img:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+}
+.slide-post img.change {
+  transform: scale(1.1); /* تكبير الصورة عند تغييرها */
 }
 
 @media screen and (max-width: 800px) {
   .price .content .slide-post {
     display: flex;
-    width: 120%;
+    width: 33%;
     margin: 0 auto;
     padding: 5px;
     margin: 5px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+  }
+  .price .img-back {
+    width: 220px;
+    height: 220px;
   }
 }
