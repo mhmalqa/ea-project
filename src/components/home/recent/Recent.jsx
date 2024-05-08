@@ -2,6 +2,7 @@ import React from "react";
 import Heading from "../../common/Heading";
 import "./recent.css";
 import RecentCard from "./RecentCard";
+import { HeaderRel } from "./Header-rel";
 
 const Recent = ({ language }) => {
   // تحديد عنوان العنصر والعنوان الفرعي بناءً على اللغة المحددة
@@ -21,7 +22,8 @@ const Recent = ({ language }) => {
       <section className="recent padding">
         <div className="container">
           {/* استخدام العنوان والعنوان الفرعي المحدد بناءً على اللغة */}
-          <Heading title={title} subtitle={slogan} slogan={subtitle} />
+          {/* <Heading title={title} subtitle={slogan} slogan={subtitle} /> */}
+          <HeaderRel/>
           <RecentCard language={language} />
         </div>
       </section>

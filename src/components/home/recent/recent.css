@@ -21,4 +21,27 @@
   border-top: 1px solid #e4e8f3;
   padding: 10px 30px;
 }
+.header-rel {
+  display: flex;
+  justify-content: space-between; /* يوزع العناصر بالتساوي على السطر */
+  align-items: center; /* يوسط العناصر عموديا */
+}
 
+.logo-rel img {
+  max-width: 230px; /* تحديد أقصى عرض للصور */
+}
+
+.title-rel h1 {
+  font-size: 24px; /* تحديد حجم النص */
+  margin: 0; /* إزالة هامش النص */
+  color: #2d3954;
+}
+@media screen and (max-width: 800px) {
+  .logo-rel img {
+    max-width: 150px; /* تحديد أقصى عرض للصور */
+  }
+
+  .title-rel h1 {
+    font-size: 14px; /* تحديد حجم النص */
+  }
+}
