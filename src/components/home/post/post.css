@@ -10,7 +10,7 @@
   z-index: -3;
   width: 320px;
   height: 320px;
-  left: -10px;
+  left: 0px;
 }
 
 .price .content .slide-post {
@@ -63,7 +63,7 @@
     margin: 5px;
   }
   .price .img-back {
-    width: 220px;
-    height: 220px;
+    width: 210px;
+    height: 210px;
   }
 }
