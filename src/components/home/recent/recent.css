@@ -38,18 +38,8 @@
   color: #2d3954;
 }
 
-.infor {
-  background-color: #54547b;
-  padding: 50px;
-  margin-top: 5px;
-  border-radius: 30px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
-}
 .infor p {
-  color: #ffffffcb;
+  color: #ffffffd4;
   line-height: 20px;
   margin: 10px;
 }
@@ -61,5 +51,9 @@
 
   .title-rel h1 {
     display: none;
+  }
+
+  .infor p {
+    font-size: 12px;
   }
 }

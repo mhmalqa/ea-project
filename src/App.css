@@ -187,6 +187,17 @@ img {
 .mb {
   margin-bottom: 80px;
 }
+.infor {
+  background-color: #54547b;
+  padding: 50px;
+  margin: 20px;
+  font-size: 12px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
 
 @media screen and (max-width: 1138px) {
   .grid4,
@@ -211,10 +222,15 @@ img {
     font-size: 25px;
     font-weight: 500;
   }
+  .infor {
+    font-size: 10px;
+  }
 }
 @media screen and (max-width: 1224px) and (min-width: 850px) {
   .grid3 {
     grid-template-columns: repeat(2, 1fr);
   }
+  .infor {
+    font-size: 10px;
+  }
 }
-

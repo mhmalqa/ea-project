@@ -4,15 +4,21 @@ export const nav = [
     text_en: "Home",
     path: "/",
   },
-  {
-    text_ar: "من نحن",
-    text_en: "About Us",
-    path: "/about",
-  },
+
   {
     text_ar: "خدماتنا",
     text_en: "Our Services",
     path: "/services",
+  },
+  {
+    text_ar: "العقارات",
+    text_en: "Real Estate",
+    path: "/real-estate",
+  },
+  {
+    text_ar: "من نحن",
+    text_en: "About Us",
+    path: "/about",
   },
   {
     text_ar: "اتصل بنا",
@@ -29,7 +35,7 @@ export const homePage = [
     slogan: "التحول نحو النجاح",
     description: "لتحقيق نجاح مؤسستك",
     description2:
-      "استشارات إدارية - استشارات مالية - تسويق - تطوير - استشارات حلول تمويل - خدمات تسويق عقاري",
+      "استشارات إدارية ومالية - تسويق  - استشارات حلول تمويل - خدمات تسويق عقاري",
     btn_view: "اعرف المزيد . . .",
   },
   {

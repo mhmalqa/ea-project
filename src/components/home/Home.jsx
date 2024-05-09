@@ -1,7 +1,6 @@
 import React from "react";
 import Awards from "./awards/Awards";
 import Sectors from "./featured/Featured";
-import Post from "./post/Post";
 import Hero from "./hero/Hero";
 import Recent from "./recent/Recent";
 import About from "../about/About";
@@ -12,9 +11,7 @@ const Home = (props) => {
   return (
     <>
       <Hero language={props.language} />
-      <Post language={props.language} isServices={true} />
       <Services language={props.language} inHome="true" />
-      <Post language={props.language} />
       <Recent language={props.language} />
       <Awards language={props.language} />
       <About language={props.language} inHome="true" />

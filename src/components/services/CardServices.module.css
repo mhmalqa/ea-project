@@ -102,6 +102,9 @@
 .buttonContainer button:hover {
   background-color: #20b169;
 }
+.infor span {
+  font-size: 10px;
+}
 
 @media screen and (min-width: 771px) and (max-width: 1497px) {
   .card {

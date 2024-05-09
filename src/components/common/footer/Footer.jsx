@@ -29,6 +29,17 @@ const Footer = ({ language }) => {
               </p>
 
               <SocialMedia />
+              <p>
+                {language === "arabic"
+                  ? " مكتب رقم ٢٦ علم الريادة للاستشارات المالية والادارية بدر محمد الصيوان للتسويق العقاري"
+                  : "Office Number 26, Entrepreneurship Science for Financial and Administrative Consultations, Badr Mohammed Al-Saywan for Real Estate Marketing."}
+              </p>
+              <a
+                href="https://maps.app.goo.gl/J7P88p2R15KF7RdN9"
+                target="_blank"
+              >
+                <button className="btn7">الموقع</button>
+              </a>
             </div>
           </div>
           {filteredFooter.map((val) => (
