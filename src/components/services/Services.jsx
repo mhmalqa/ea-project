@@ -68,7 +68,34 @@ const Services = ({ language, inHome }) => {
                       تحديات السوق.
                     </>
                   ) : (
-                    <></>
+                    <>
+                      1. Economic Feasibility Study:
+                      <br />- We provide specialized services to guide your
+                      investment decisions. - We analyze financial and economic
+                      data to ensure project feasibility. - We provide
+                      comprehensive analytics to understand all financial and
+                      market dimensions.
+                      <br /> 2. Economic, Financial, and Administrative
+                      Consultations:
+                      <br />- We provide the necessary support to improve your
+                      operations efficiency and performance. - We assist in
+                      strategic decision-making and sustainable growth.
+                      <br /> 3. Advanced Financial Solutions Consultations:
+                      <br />- We offer solutions consultations for project
+                      financing with government support or private sector. - We
+                      assist in real estate financing, corporate financing, and
+                      point of sale financing to enhance liquidity.
+                      <br /> 4. Marketing and Digital Marketing Services:
+                      <br /> - We design integrated marketing strategies to
+                      enhance your brand identity. - We manage advertising
+                      campaigns and improve search engines to expand your
+                      digital presence.
+                      <br /> 5. Corporate Restructuring Services:
+                      <br />- We provide customized solutions to enhance
+                      corporate effectiveness and achieve goals. - We evaluate
+                      and design improved organizational structures to address
+                      market challenges.
+                    </>
                   )}
                 </p>
               </span>
