@@ -12,8 +12,9 @@ const Home = (props) => {
   return (
     <>
       <Hero language={props.language} />
-      <Post language={props.language} />
+      <Post language={props.language} isServices={true} />
       <Services language={props.language} inHome="true" />
+      <Post language={props.language} />
       <Recent language={props.language} />
       <Awards language={props.language} />
       <About language={props.language} inHome="true" />

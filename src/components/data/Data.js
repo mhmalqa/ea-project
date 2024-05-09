@@ -461,23 +461,11 @@ export const posts = {
   post_rel: [
     {
       img: "/images/posts/post2.jpg",
-      alt: "Post 2",
+      alt: "Post 1",
       srcSet: "",
     },
     {
       img: "/images/posts/post3.jpg",
-      alt: "Post 3",
-      srcSet: "",
-    },
-  ],
-  post_sol: [
-    {
-      img: "/images/posts/post3.jpg",
-      alt: "Post 3",
-      srcSet: "",
-    },
-    {
-      img: "/images/posts/post2.jpg",
       alt: "Post 2",
       srcSet: "",
     },
@@ -485,12 +473,27 @@ export const posts = {
   post_adm: [
     {
       img: "/images/posts/post2.jpg",
-      alt: "Post 2",
+      alt: "Post 1",
       srcSet: "",
     },
     {
       img: "/images/posts/post3.jpg",
-      alt: "Post 8",
+      alt: "Post 2",
+      srcSet: "",
+    },
+    {
+      img: "/images/posts/post2.jpg",
+      alt: "Post 3",
+      srcSet: "",
+    },
+    {
+      img: "/images/posts/post3.jpg",
+      alt: "Post 4",
+      srcSet: "",
+    },
+    {
+      img: "/images/posts/post2.jpg",
+      alt: "Post 5",
       srcSet: "",
     },
   ],

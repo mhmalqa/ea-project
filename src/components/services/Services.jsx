@@ -7,11 +7,14 @@ import Heading from "../common/Heading";
 import "./CardServices.module.css";
 
 const Services = ({ language, inHome }) => {
-  const title = language === "arabic" ? "الخدمات" : "Services";
+  const title =
+    language === "arabic"
+      ? "  الخدمات الاستشارية المالية والادارية والاستشارات الحلول المالية"
+      : "Financial and Administrative Consulting Services and Financial Solutions Consultancy";
   const subtitle =
     language === "arabic"
-      ? "نقدم لكم افضل الخدمات اطلب الان"
-      : "We provide you with the best services. Order now";
+      ? "مكتبنا يقدم خدمات متكاملة وعالية الجودة في مجالات الاستشارات الإدارية والمالية للقطاعين العام والخاص، ونسعى إلى الوصول لموقع تنافسي كأحد المكاتب الاستشارية الرائدة التي تسعى لتحقيق الرؤية الثاقبة 2030 في المملكة العربية السعودية."
+      : " Our office provides integrated and high-quality services in the fields of financial and administrative consulting for both public and private sectors. We aspire to achieve a competitive position as one of the leading consulting firms striving to realize the insightful Vision 2030 in the Kingdom of Saudi Arabia.";
 
   return (
     <>

@@ -53,10 +53,12 @@ button i {
   color: #2d3954;
   font-weight: 600;
   text-transform: capitalize;
-  font-size: 25px;
+  font-size: 23px;
+  margin-bottom: 3px;
 }
 .heading p {
   color: #72809d;
+  font-size: 14px;
 }
 textarea,
 input {

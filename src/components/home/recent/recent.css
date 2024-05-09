@@ -32,17 +32,34 @@
 }
 
 .title-rel h1 {
-  font-size: 24px; /* تحديد حجم النص */
+  text-align: center;
+  font-size: 20px; /* تحديد حجم النص */
   margin: 0; /* إزالة هامش النص */
   color: #2d3954;
 }
+
+.infor {
+  background-color: #54547b;
+  padding: 50px;
+  margin-top: 5px;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -ms-border-radius: 30px;
+  -o-border-radius: 30px;
+}
+.infor p {
+  color: #ffffffcb;
+  line-height: 20px;
+  margin: 10px;
+}
+
 @media screen and (max-width: 800px) {
   .logo-rel img {
     max-width: 150px; /* تحديد أقصى عرض للصور */
   }
 
   .title-rel h1 {
-    font-size: 14px; /* تحديد حجم النص */
-    margin-top: 100px;
+    display: none;
   }
 }
