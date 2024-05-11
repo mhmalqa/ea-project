@@ -8,6 +8,9 @@ import { BtnLogin } from "./btn-login";
 const Header = ({ language, setLanguage }) => {
   const [navList, setNavList] = useState(false);
   const homepage = process.env.PUBLIC_URL || "/"; // تحديد الرابط الرئيسي
+  const scrollToTop = () => {
+    window.scrollTo(0, 0); // Scroll to the top of the page
+  };
 
   return (
     <header>
@@ -22,7 +25,7 @@ const Header = ({ language, setLanguage }) => {
           <ul className={navList ? "small" : "flex"}>
             {nav.map((item, index) => (
               <li key={index}>
-                <Link to={item.path}>
+                <Link to={item.path} onClick={scrollToTop}>
                   {language === "arabic" ? item.text_ar : item.text_en}
                 </Link>
               </li>

@@ -15,7 +15,7 @@ import Services from "../services/Services";
 import Contact from "../contact/Contact";
 import { ViewImage } from "../home/recent/view_properties/slideView";
 import { LoginBage } from "../login/Login";
-import RecentCard from "../home/recent/RecentCard";
+import { RecentBage } from "../recentbage/RecentBage";
 
 const Pages = () => {
   const [language, setLanguage] = useState(localStorage.getItem("language"));
@@ -45,7 +45,7 @@ const Pages = () => {
           />
           <Route
             path="/real-estate"
-            component={() => <RecentCard language={language} />}
+            component={() => <RecentBage language={language} />}
           />
           <Route path="/blog" component={Blog} />
           <Route path="/pricing" component={Pricing} />

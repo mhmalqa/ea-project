@@ -94,34 +94,40 @@ export const services = [
     cover: "./images/hero/h4.png",
     name: "دراسة الجدوى الاقتصادية",
     name_en: "Economic Feasibility Study",
-    desc_b: "الوصف",
-    desc_b_en: "Description",
+    desc_b:
+      "من خلال هذه الخدمة، نقوم بتقييم المشاريع المقترحة بدقة، وتحليل البيانات المالية والاقتصادية للتأكد من جدوى المشروع. نضع بين أيديكم تحليلات معمقة تساعدكم على فهم كافة الأبعاد المالية والسوقية المتعلقة بالمشروع. كما نوفر لكم خططًا مستقبلية مدروسة تساعد على تحقيق النجاح والاستدامة في سوق الأعمال السعودي.",
+    desc_b_en:
+      "Through this service, we accurately evaluate proposed projects, analyze financial and economic data to ensure the project's feasibility. We provide in-depth analysis to help you understand all financial and market-related dimensions of the project. Additionally, we offer meticulously crafted future plans to assist in achieving success and sustainability in the Saudi business market.",
     desc_f:
-      "خدمة دراسة الجدوى الاقتصادية تقييم المشاريع وتحليل البيانات المالية والاقتصادية للتأكد من جدوى المشروع وتوفير الخطط المستقبلية له.",
+      "في عالم الأعمال المتسارع، يأتي قرار الاستثمار مع تحديات ومخاطر عديدة. لذا، نقدم لكم خدمة دراسة الجدوى الاقتصادية التي تعد بمثابة بوصلتكم لاتخاذ القرارات الاستثمارية الصائبة.",
     desc_f_en:
-      "Economic feasibility study service evaluates projects, analyzes financial and economic data to ensure project feasibility, and provides future plans for it.",
+      "In the fast-paced business world, investment decisions come with numerous challenges and risks. Therefore, we offer you an economic feasibility study service that serves as your compass for making sound investment decisions.",
   },
   {
     id: 2,
     cover: "./images/hero/h2.png",
     name: "استشارات اقتصادية و مالية و ادارية",
     name_en: "Industrial Sector",
-    desc_b: "الوصف",
-    desc_b_en: "Description",
+    desc_b:
+      "نقدم استشارات متخصصة في المجالات الاقتصادية، المالية، والإدارية، مع التركيز على تقديم نصائح عملية وإرشادات مهنية تساعد في صنع القرارات الاستراتيجية وتحقيق النمو المستدام. سواء كنتم تسعون لتطوير استراتيجيات جديدة أو تحتاجون إلى تحليل شامل للأوضاع المالية، فإن خبرائنا مستعدون لمساعدتكم في تجاوز التحديات واستغلال الفرص المتاحة في السوق السعودي.",
+    desc_b_en:
+      "We offer specialized consultancy services in economic, financial, and administrative fields, focusing on providing practical advice and professional guidance to aid in strategic decision-making and achieving sustainable growth. Whether you are seeking to develop new strategies or require comprehensive financial situation analysis, our experts are ready to assist you in overcoming challenges and capitalizing on opportunities available in the Saudi market.",
     desc_f:
-      "خدمة استشارات اقتصادية ومالية وادارية تساعد الشركات على تحسين أدائها وتحقيق النجاح من خلال تقديم النصائح والإرشادات المهنية.",
+      "في ظل التحديات المتزايدة التي تواجهها الشركات في السوق السعودي، تأتي خدماتنا الاستشارية لتقدم لكم الدعم اللازم لتعزيز كفاءة عملياتكم وتحسين أدائكم المالي والإداري.",
     desc_f_en:
-      "Economic, financial, and administrative consultancy service helps companies improve their performance and achieve success by providing professional advice and guidance.",
+      "Amidst the growing challenges facing companies in the Saudi market, our consultancy services come to provide you with the necessary support to enhance the efficiency of your operations and improve your financial and administrative performance.",
   },
   {
     id: 3,
     cover: "./images/hero/h3.png",
-    name: "حلول مالية وإدارية وتسويقية",
+    name: "حلول مالية متطورة ",
     name_en: "Educational Sector",
-    desc_b: "الوصف",
-    desc_b_en: "Description",
+    desc_b:
+      "كما نقدم استشارات لتمويل برهن عقاري، لاستغلال قيمة الأصول العقارية في تعزيز السيولة المالية لمشاريعكم. بالإضافة إلى ذلك، نوفر حلول تمويل نقاط البيع للمحلات التجارية، التي تسهم في تسهيل العمليات وتحسين التدفقات النقدية. ونقدم أيضًا استشارات حلول تمويل للشركات، لدعم الشركات الطامحة في التوسع وتحسين أدائها المالي بحلول مبتكرة تساهم في تحقيق النمو والاستقرار المالي طويل الأمد.",
+    desc_b_en:
+      "We also provide consultancy for mortgage financing, leveraging the value of real estate assets to enhance the financial liquidity of your projects. Additionally, we offer financing solutions for point of sale for commercial outlets, facilitating operations and improving cash flows.Furthermore, we provide corporate financing solutions to support ambitious companies in expansion and improving their financial performance through innovative solutions that contribute to achieving long-term growth and financial stability.",
     desc_f:
-      "حلول مالية وإدارية وتسويقية مبتكرة وفعالة لتحقيق أهداف الشركات والأفراد بمساعدة مستشارينا المهرة .",
+      "في ظل التطورات الاقتصادية المستمرة في المملكة العربية السعودية، يقدم مكتب علم الريادة للاستشارات الإدارية والمالية خدمات استشارية متخصصة توفر حلول تمويل متكاملة تلائم كافة القطاعات. نحن نسعى لتقديم استشارات دقيقة لتمويل المشاريع المدعومة من الصناديق الحكومية.",
     desc_f_en:
       "Innovative and effective financial, administrative, and marketing solutions to achieve the goals of companies and individuals with the help of our skilled consultants .",
   },
@@ -130,36 +136,28 @@ export const services = [
     cover: "./images/hero/h1.png",
     name: "خدمة إعادة الهيكلة الإدارية للشركات",
     name_en: "Entertainment Sector",
-    desc_b: "الوصف",
-    desc_b_en: "Description",
+    desc_b:
+      "نقوم بتقييم شامل للأنظمة الإدارية القائمة وتصميم هياكل تنظيمية جديدة تتناسب مع تحديات وفرص السوق المحلي. خدماتنا تشمل تطوير الإستراتيجيات، تحسين العمليات، وتدريب الفرق الإدارية لضمان تنفيذ فعّال ومستدام. استفيدوا من خبرتنا لإعادة هيكلة شركتكم بما يعزز من مرونتها وقدرتها التنافسية في السوق.",
+    desc_b_en:
+      "We conduct a comprehensive evaluation of existing management systems and design new organizational structures tailored to the challenges and opportunities of the local market. Our services include strategy development, process improvement, and management team training to ensure effective and sustainable implementation. Benefit from our expertise in restructuring your company to enhance its resilience and competitiveness in the market.",
     desc_f:
-      "خدمة إعادة الهيكلة الإدارية للشركات توفر حلولًا مخصصة وفعالة لتحسين كفاءة الشركات وتحقيق الأهداف بطرق أفضل.",
+      "في بيئة الأعمال المتغيرة بالمملكة العربية السعودية، تبرز الحاجة الماسة للشركات لتعزيز فعاليتها وتحسين أدائها من خلال هياكل تنظيمية محسّنة.  نقدم خدمة إعادة الهيكلة الإدارية، التي تهدف إلى توفير حلول مخصصة وفعالة لتحسين كفاءة الشركات وتحقيق أهدافها بطرق أكثر فاعلية.",
     desc_f_en:
-      "Corporate restructuring service provides tailored and effective solutions to enhance companies' efficiency and achieve goals in better ways, offered at Al-Arab Office.",
+      "In the dynamic business environment of Saudi Arabia, there is a pressing need for companies to enhance their effectiveness and improve their performance through optimized organizational structures. We provide administrative restructuring services aimed at offering customized and efficient solutions to enhance companies' efficiency and achieve their goals more effectively.",
   },
   {
     id: 5,
     cover: "./images/hero/h6.png",
-    name: "إدارة المشاريع والاستثمارات",
-    name_en: "Service Sector",
-    desc_b: "الوصف",
-    desc_b_en: "Description",
+    name: "خدمات التسويق والتسويق الرقمي",
+    name_en: "Marketing and Digital Marketing Services",
+    desc_b:
+      "خدماتنا في التسويق الرقمي تشمل إدارة الحملات الإعلانية عبر الإنترنت، تحسين محركات البحث (SEO)، التسويق عبر وسائل التواصل الاجتماعي، وإنشاء المحتوى الرقمي الذي يجذب ويحافظ على اهتمام العملاء. نقدم أيضًا تحليلات مفصلة تساعدكم على فهم سلوك المستهلك وتعزيز ROI (العائد على الاستثمار). استفيدوا من خبرتنا الواسعة لتعزيز وجودكم في السوق وتحقيق أفضل النتائج من خلال حملات تسويقية مدروسة ومستهدفة بعناية.",
+    desc_b_en:
+      "Our digital marketing services include online advertising campaign management, search engine optimization (SEO), social media marketing, and creating engaging digital content that attracts and retains customer interest. We also provide detailed analytics to help you understand consumer behavior and enhance ROI (Return on Investment). Benefit from our extensive expertise to strengthen your market presence and achieve optimal results through carefully crafted and targeted marketing campaigns.",
     desc_f:
-      "خدمة إدارة المشاريع والاستثمارات للشركات لتحقيق أهدافها وزيادة ربحيتها بإدارة الاستثمارات بكفاءة ومهارة.",
+      "في عصر التحول الرقمي، نقدم مجموعة شاملة من خدمات التسويق التقليدي والرقمي، مصممة خصيصًا لتلبية احتياجات السوق السعودي. نساعدكم في بناء استراتيجيات تسويقية فعّالة تستهدف جمهوركم المحلي بدقة وتعزز من هويتكم التجارية وتحقق أهدافكم الاستراتيجية.",
     desc_f_en:
-      "Project and investment management service for companies to achieve their goals and increase profitability through efficient and skillful investment management.",
-  },
-  {
-    id: 5,
-    cover: "./images/hero/h6.png",
-    name: "التطوير وتنمية الإستثمارات والموارد",
-    name_en: "Service Sector",
-    desc_b: "الوصف",
-    desc_b_en: "Description",
-    desc_f:
-      "خدمة التطوير وتنمية الإستثمارات والموارد تساعد على تحسين العمليات وزيادة الأرباح من خلال الابتكار وتحسين الكفاءة والفاعلية بأفضل الطرق الممكنة.",
-    desc_f_en:
-      "Investment and resource development service helps improve operations and increase profits through innovation and enhancing efficiency and effectiveness in the best possible ways.",
+      "In the digital age, we offer a comprehensive range of traditional and digital marketing services, specifically designed to meet the needs of the Saudi market. We help you build effective marketing strategies that precisely target your local audience, enhance your brand identity, and achieve your strategic objectives.",
   },
 ];
 
@@ -476,33 +474,7 @@ export const posts = {
       srcSet: "",
     },
   ],
-  post_adm: [
-    {
-      img: "/images/posts/post2.jpg",
-      alt: "Post 1",
-      srcSet: "",
-    },
-    {
-      img: "/images/posts/post3.jpg",
-      alt: "Post 2",
-      srcSet: "",
-    },
-    {
-      img: "/images/posts/post2.jpg",
-      alt: "Post 3",
-      srcSet: "",
-    },
-    {
-      img: "/images/posts/post3.jpg",
-      alt: "Post 4",
-      srcSet: "",
-    },
-    {
-      img: "/images/posts/post2.jpg",
-      alt: "Post 5",
-      srcSet: "",
-    },
-  ],
+  post_adm: [],
 };
 
 export const footer = [

@@ -5,7 +5,7 @@ import RecentCard from "./RecentCard";
 import Post from "../post/Post";
 import { HeaderRel } from "./Header-rel";
 
-const Recent = ({ language }) => {
+const Recent = ({ language, isHome }) => {
   // تحديد عنوان العنصر والعنوان الفرعي بناءً على اللغة المحددة
   const title =
     language === "arabic" ? "بدر محمد الصيوان" : "Badr Mohammed Al-Saywan";
@@ -21,7 +21,7 @@ const Recent = ({ language }) => {
   return (
     <>
       <section className="recent padding">
-        <div className="container">
+        <div className="container" style={!isHome ? { display: "none" } : null}>
           {/* استخدام العنوان والعنوان الفرعي المحدد بناءً على اللغة */}
           <HeaderRel language={language} />
           <Heading title={title} subtitle={slogan} />
@@ -90,10 +90,13 @@ const Recent = ({ language }) => {
             </div>
           </div>
         </div>
+        <div className="container" style={!isHome ? null : { display: "none" }}>
+          <HeaderRel language={language} />
+        </div>
         <Post language={language} />
         <div className="container">
           <Heading title={language === "arabic" ? "العقارات" : "Real Estate"} />
-          <RecentCard language={language} />
+          <RecentCard language={language} isHome={isHome} />
         </div>
       </section>
     </>

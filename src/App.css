@@ -99,6 +99,7 @@ h4 {
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 30px;
 }
+
 .box {
   transition: transform 0.3s ease;
 }
@@ -198,6 +199,9 @@ img {
   -ms-border-radius: 30px;
   -o-border-radius: 30px;
 }
+.btn-serv {
+  padding: 12px 15px;
+}
 
 @media screen and (max-width: 1138px) {
   .grid4,
@@ -222,15 +226,18 @@ img {
     font-size: 25px;
     font-weight: 500;
   }
-  .infor {
-    font-size: 10px;
-  }
 }
 @media screen and (max-width: 1224px) and (min-width: 850px) {
   .grid3 {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+@media screen and (max-width: 849) {
   .infor {
-    font-size: 10px;
+    font-size: 1px;
+    padding: 25;
+  }
+  .infor p {
+    font-weight: 300;
   }
 }

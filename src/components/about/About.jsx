@@ -62,14 +62,24 @@ const About = (props) => {
                 </p>
               </>
             )}
-
-            <Link to="/about">
-              <button className="btn2" onClick={scrollToTop}>
-                {isArabic ? "المزيد عنا" : "More About Us"}
+            {!showBackButton && (
+              <Link to="/about">
+                <button className="btnn" onClick={scrollToTop}>
+                  {isArabic ? "المزيد عنا" : "More About Us"}
+                </button>
+              </Link>
+            )}
+            <a
+              href="https://chat.whatsapp.com/FlY4ex4bbkaJJypxJx9BkW"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="btn8">
+                <i class="fa-brands fa-whatsapp"></i>{" "}
+                {isArabic ? "انضم الينا على الواتساب" : "Join us on WhatsApp"}
               </button>
-            </Link>
+            </a>
           </div>
-
           {!showBackButton && (
             <div className="right row">
               <img

@@ -18,6 +18,33 @@
   margin-bottom: 20px;
   line-height: 30px;
 }
+.about .btnn {
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.about .btnn:hover {
+  background-color: rgb(53, 74, 113);
+}
+.btn8 {
+  background-color: rgb(62, 168, 101);
+  margin: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+}
+.btn8:hover {
+  background-color: rgb(53, 74, 113);
+}
 @media screen and (max-width: 768px) {
   .about .container {
     flex-direction: column;

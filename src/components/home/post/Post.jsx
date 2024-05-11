@@ -5,9 +5,7 @@ import PostCard from "./PostCard";
 import { posts } from "../../data/Data";
 
 const Post = (props) => {
-  const [post, setPost] = useState(
-    props.isServices ? posts.post_adm : posts.post_rel
-  );
+  const postList = props.isServices ? posts.post_adm : posts.post_rel;
   const title =
     props.language === "arabic"
       ? props.isServices
@@ -16,6 +14,7 @@ const Post = (props) => {
       : props.isServices
       ? "Financial and Administrative Services"
       : "Real Estate Services";
+
   return (
     <>
       <section className="post">
@@ -26,7 +25,9 @@ const Post = (props) => {
         />
         <div className="container mtop">
           <Heading title={title} />
-          <PostCard isServices={props.isServices} posts={post} />
+          {postList.length > 0 && (
+            <PostCard isServices={props.isServices} posts={postList} />
+          )}
         </div>
       </section>
     </>

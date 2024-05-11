@@ -53,6 +53,21 @@ footer .icons {
 footer .icons i {
   font-size: 25px;
 }
+footer .btn-location {
+  padding: 15px 8px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+footer .btn-location:hover {
+  background-color: rgba(224, 118, 42, 0.853);
+}
+footer .btn-location i {
+  margin: 0 5px;
+}
+
 @media screen and (max-width: 800px) {
   footer .container {
     grid-template-columns: repeat(2, 1fr);
@@ -67,11 +82,11 @@ footer .icons i {
     width: 170px;
   }
   footer h3 {
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-footer p {
-  font-size: 11px;
-  line-height: 20px;
-}
+    font-weight: 400;
+    margin-bottom: 10px;
+  }
+  footer p {
+    font-size: 11px;
+    line-height: 20px;
+  }
 }

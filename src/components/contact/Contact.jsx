@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import img from "../images/pricing.jpg";
+import img from "../images/contactusar.jpg";
 import Back from "../common/Back";
 import "./contact.css";
 import Heading from "../common/Heading";
@@ -30,15 +30,19 @@ const Contact = ({ inHome, language }) => {
         {inHome === "true" ? (
           <Heading title={isArabic ? "اتصل بنا" : "Contact Us"} subtitle="" />
         ) : (
-          <Back
-            name={isArabic ? "اتصل بنا" : "Contact Us"}
-            title={
-              isArabic
-                ? "احصل على المساعدة والدعم "
-                : "Get Helps & Friendly Support"
-            }
-            cover={img}
-          />
+          <>
+            <Back
+              name={isArabic ? "اتصل بنا" : "Contact Us"}
+              title={
+                isArabic
+                  ? "احصل على المساعدة والدعم "
+                  : "Get Helps & Friendly Support"
+              }
+              cover={img}
+            />
+            <br />
+            <Heading title={isArabic ? "اتصل بنا" : "Contact Us"} subtitle="" />
+          </>
         )}
 
         <br />

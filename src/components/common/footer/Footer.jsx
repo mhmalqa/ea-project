@@ -37,8 +37,13 @@ const Footer = ({ language }) => {
               <a
                 href="https://maps.app.goo.gl/J7P88p2R15KF7RdN9"
                 target="_blank"
+                rel="noopener noreferrer"
               >
-                <button className="btn7">الموقع</button>
+                <button className="btn-location">
+                  {language === "arabic" ? " الموقع" : "location"}
+
+                  <i class="fa fa-location-dot"></i>
+                </button>
               </a>
             </div>
           </div>

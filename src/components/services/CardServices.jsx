@@ -32,10 +32,10 @@ const CardServices = (props) => {
         <h2>{props.name}</h2>
         <p className="desc">{props.desc_f}</p>
         <div className={styles.buttonContainer}>
-          <button className="btn7" onClick={handleOrderNowClick}>
+          <button className="btn-serv" onClick={handleOrderNowClick}>
             {props.language === "arabic" ? "اطلب الان" : "Order Now"}
           </button>
-          <button className="btn6">
+          <button className="btn-serv">
             {props.language === "arabic" ? "اقرأ المزيد" : "Read More"}
           </button>
         </div>

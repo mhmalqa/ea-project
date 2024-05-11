@@ -1,14 +1,13 @@
 import React, { useState } from "react";
-import { list } from "../../data/Data"; // استبدل "yourListFile" بمسار ملف القائمة الخاص بك
+import { list } from "../../data/Data";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
+import "../recent/Recent";
 
-const RecentCard = ({ language }) => {
-  // حالة لتخزين العناصر العشوائية
+const RecentCard = ({ language, isHome }) => {
   const [randomItems, setRandomItems] = useState([]);
   const [open, setOpen] = React.useState(false);
 
-  // تحديث العناصر العشوائية عند كل تحديث
   useState(() => {
     const randomItemsArray = [];
     while (randomItemsArray.length < 6) {
@@ -20,10 +19,15 @@ const RecentCard = ({ language }) => {
     setRandomItems(randomItemsArray);
   }, []);
 
+  // عرض جميع العناصر إذا كانت القيمة الممررة لـ isHome هي true، وإلا فعرض 6 عناصر عشوائية
+  const itemsToDisplay = !isHome
+    ? list
+    : randomItems.map((index) => list[index]);
+
   return (
     <>
       <div className="content grid3 mtop">
-        {randomItems.map((index) => {
+        {itemsToDisplay.map((item, index) => {
           const {
             cover,
             category,
@@ -35,7 +39,7 @@ const RecentCard = ({ language }) => {
             location_en,
             category_en,
             type_en,
-          } = list[index];
+          } = item;
           const itemName = language === "english" ? name_en : name;
           const itemLocation = language === "english" ? location_en : location;
           const itemCategory = language === "english" ? category_en : category;
@@ -68,7 +72,6 @@ const RecentCard = ({ language }) => {
                   <button className="btn2" onClick={() => setOpen(true)}>
                     SAR {price}
                   </button>
-                  
                 </div>
                 <span>{itemType}</span>
               </div>
