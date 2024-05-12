@@ -116,7 +116,7 @@ const Services = ({ language, inHome }) => {
         </div>
         <Post language={language} isServices={true} />
         <Heading subtitle={subtitle} />
-        <div className="container grid3">
+        <div className="container grid3" >
           {services.map((item) => (
             <CardServices
               language={language}

@@ -1,6 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { Link } from "react-router-dom";
 import { SocialMedia } from "./header/socialmedia";
+import SmoothScroll from "smooth-scroll";
 
 const Heading = ({
   title,
@@ -10,6 +11,12 @@ const Heading = ({
   description2,
   btn_view,
 }) => {
+  // تهيئة Smooth Scroll
+  const scroll = new SmoothScroll('a[href*="#"]', {
+    speed: 2500, // سرعة التمرير بالميلي ثانية
+    speedAsDuration: true, // استخدم السرعة كمدة للتمرير بدلاً من إعدادات التأخير
+  });
+
   return (
     <>
       <div className="heading">
@@ -22,9 +29,14 @@ const Heading = ({
         {btn_view && <SocialMedia insta="www.instagram.com" />}
 
         {btn_view && (
-          <Link to="" className="hero-btn">
+          // استخدام الرابط مع التمرير السلس
+          <a
+            href="#moreAboutUs"
+            className="hero-btn"
+            onClick={() => scroll.animateScroll("#moreAboutUs")}
+          >
             {btn_view}
-          </Link>
+          </a>
         )}
       </div>
     </>

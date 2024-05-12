@@ -14,7 +14,7 @@ const About = (props) => {
 
   return (
     <>
-      <section className="about">
+      <section id="moreAboutUs" className="about">
         {showBackButton && (
           <Back
             name={isArabic ? "من نحن؟" : "About Us"}

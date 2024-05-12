@@ -104,6 +104,17 @@ header .toggle {
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
 }
+@media screen and (max-width: 1126px) and (min-width: 904px) {
+  header img {
+    margin: auto -50px;
+    width: 280px;
+  }
+
+  header a {
+    margin: auto 7px;
+    font-size: 15px;
+  }
+}
 
 @media screen and (max-width: 903px) {
   header {

@@ -7,8 +7,12 @@ export function RecentBage({ language }) {
     <>
       <section className="pricing mb">
         <Back
-          name="جميع العقارات"
-          title="احصل على عقارك الآن واصنع مستقبلك!"
+          name={language !== "arabic" ? "All Real Estates" : "جميع العقارات"}
+          title={
+            language !== "arabic"
+              ? "Get your property now and create your future!"
+              : "احصل على عقارك الآن واصنع مستقبلك!"
+          }
           cover={img}
         />
 
