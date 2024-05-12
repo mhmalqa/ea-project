@@ -64,12 +64,6 @@ button i {
   color: #72809d;
   font-size: 14px;
 }
-textarea,
-input {
-  border: none;
-  outline: none;
-  background: none;
-}
 .background {
   padding: 80px 0;
   position: relative;

@@ -46,7 +46,10 @@ const Header = ({ language, setLanguage }) => {
         <div className="nav">
           <ul className={navList ? "small" : "flex"}>
             {nav.map((item, index) => (
-              <li key={index}>
+              <li
+                onClick={() => (navList ? setNavList(!navList) : null)}
+                key={index}
+              >
                 <Link
                   to={item.path}
                   onClick={() => {
