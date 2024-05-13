@@ -13,7 +13,7 @@ const Heading = ({
 }) => {
   // تهيئة Smooth Scroll
   const scroll = new SmoothScroll('a[href*="#"]', {
-    speed: 2500, // سرعة التمرير بالميلي ثانية
+    speed: 1000, // سرعة التمرير بالميلي ثانية
     speedAsDuration: true, // استخدم السرعة كمدة للتمرير بدلاً من إعدادات التأخير
   });
 

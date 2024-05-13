@@ -7,6 +7,9 @@ import { ViewProperty } from "./view_properties/ViewProperty";
 
 const RecentCard = ({ language, isHome }) => {
   const [randomItems, setRandomItems] = useState([]);
+  const scrollToTop = () => {
+    window.scrollTo(0, 0); // التمرير إلى أعلى الصفحة
+  };
 
   useEffect(() => {
     if (isHome && randomItems.length < 6) {
@@ -81,9 +84,10 @@ const RecentCard = ({ language, isHome }) => {
                       pathname: "/view", // المسار المستهدف
                       state: { item, language }, // البيانات المراد تمريرها
                     }}
-                    
                   >
-                    <button className="btn2">SAR {price}</button>
+                    <button className="btn2" onClick={scrollToTop}>
+                      SAR {price}
+                    </button>
                   </Link>
                 </div>
                 <span>{itemType}</span>
