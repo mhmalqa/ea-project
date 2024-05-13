@@ -1,0 +1,115 @@
+.viewpropery .container {
+  background-color: rgba(246, 245, 244, 0.792);
+  box-shadow: 0 0 20px 0 rgb(112 121 138 / 18%);
+  padding-top: 30px;
+}
+.view-img {
+  width: 70%;
+  margin: 10px 30px;
+  position: relative;
+}
+
+.view-img img {
+  margin-top: 20px;
+  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.482);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.div-button {
+  bottom: 0.5rem;
+  display: flex;
+  position: absolute;
+  z-index: 1;
+}
+.div-button button,
+.div-button a {
+  background-color: rgb(240, 248, 255);
+  color: rgb(35, 64, 122);
+  border: 1px solid rgb(35, 64, 122);
+  padding: 15px 10px;
+  border-radius: 10px;
+  margin: 3px;
+  font-family: "Alexandria", sans-serif;
+  font-size: 12px;
+
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.div-button button:hover,
+.div-button a:hover {
+  background-color: rgb(35, 64, 122);
+  color: #fff;
+}
+.div-button i {
+  margin: auto 10px;
+}
+.table-div {
+  padding: 40px 0;
+  font-size: 18px;
+  text-align: right;
+  margin: auto 25px;
+  width: 70%;
+}
+.table-div table {
+  margin: 20px;
+}
+table th {
+  font-weight: 300;
+  padding: auto 30px;
+}
+table td {
+  font-weight: 500;
+  padding: 5px 40px;
+}
+.desc-more {
+  font-size: 18px;
+  font-weight: 300;
+  margin: 10px;
+  line-height: 35px;
+}
+.viewpropery .containt {
+  position: fixed;
+  top: 5.8rem;
+  /*لتحديدالمسافةمنالأعلى*/
+  left: 10%;
+  /*لتحديدالمسافةمناليسار*/
+  width: 22rem;
+  height: 9rem;
+  padding: 15px 0px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0px 3px 5px 0px rgba(24, 33, 27, 0.299);
+  font-size: 22px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.viewpropery .containt div {
+  margin-top: 40px;
+}
+.viewpropery .containt a {
+  margin: 0 15px;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 10px;
+  font-size: 15px;
+  text-align: center;
+}
+.viewpropery .containt .whats {
+  background-color: rgb(106, 183, 29);
+  
+}
+.viewpropery .containt .email {
+  background-color: rgb(232, 46, 13);
+}
+.viewpropery .containt i {
+  font-size: 20px;
+  margin-left: 4px;
+}

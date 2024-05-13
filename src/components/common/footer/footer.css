@@ -54,18 +54,18 @@ footer .icons i {
   font-size: 25px;
 }
 footer .btn-location {
-  padding: 15px 8px;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  padding: 15px 10px;
+  border-radius: 70px;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  -ms-border-radius: 70px;
+  -o-border-radius: 70px;
 }
 footer .btn-location:hover {
   background-color: rgba(224, 118, 42, 0.853);
 }
 footer .btn-location i {
-  margin: 0 5px;
+  margin: 0 8px;
 }
 
 @media screen and (max-width: 800px) {

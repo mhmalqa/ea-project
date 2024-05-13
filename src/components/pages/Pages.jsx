@@ -14,12 +14,13 @@ import Pricing from "../pricing/Pricing";
 import Blog from "../blog/Blog";
 import Services from "../services/Services";
 import Contact from "../contact/Contact";
-import { ViewImage } from "../home/recent/view_properties/slideView";
+import { ViewProperty } from "../home/recent/view_properties/ViewProperty";
 import { LoginBage } from "../login/Login";
 import { RecentBage } from "../recentbage/RecentBage";
 
 const Pages = () => {
-  const [language, setLanguage] = useState(localStorage.getItem("language"));
+  const defaultLanguage = localStorage.getItem("language") || "english";
+  const [language, setLanguage] = useState(defaultLanguage);
   document.querySelector("html").dir = language === "arabic" ? "rtl" : "ltr";
 
   return (
@@ -30,28 +31,25 @@ const Pages = () => {
           <Route
             exact
             path="/home"
-            component={() => <Home language={language} />}
+            render={() => <Home language={language} />}
           />
-          <Route
-            path="/about"
-            component={() => <About language={language} />}
-          />
+          <Route path="/about" render={() => <About language={language} />} />
           <Route
             path="/services"
-            component={() => <Services language={language} />}
+            render={() => <Services language={language} />}
           />
           <Route
             path="/login"
-            component={() => <LoginBage language={language} />}
+            render={() => <LoginBage language={language} />}
           />
           <Route
             path="/real-estate"
-            component={() => <RecentBage language={language} />}
+            render={() => <RecentBage language={language} />}
           />
           <Route path="/blog" component={Blog} />
           <Route path="/pricing" component={Pricing} />
           <Route path="/contact" component={Contact} />
-          <Route path="/image" component={ViewImage} />
+          <Route path="/view" component={ViewProperty} />
           <Redirect from="/" to="/home" />
         </Switch>
         <Footer language={language} />

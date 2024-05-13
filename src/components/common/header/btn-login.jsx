@@ -7,7 +7,7 @@ export function BtnLogin({ language }) {
       {" "}
       {/* توجيه المستخدم إلى صفحة تسجيل الدخول عند النقر */}
       <i className="fa fa-sign-out"></i>{" "}
-      {language === "arabic" ? "تسجيل الدخول" : "Login"}
+      {language === "arabic" ? " الدخول" : "Login"}
     </Link>
   );
 }

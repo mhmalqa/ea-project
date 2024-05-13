@@ -47,6 +47,15 @@
 .infor p span {
   font-weight: 700;
 }
+.more .btn-more {
+  margin: 10px 10px;
+  background-color: #5d4fbb;
+  border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  -ms-border-radius: 40px;
+  -o-border-radius: 40px;
+}
 
 @media screen and (max-width: 800px) {
   .logo-rel img {
@@ -56,7 +65,7 @@
   .title-rel h1 {
     display: none;
   }
-.infor {
+  .infor {
     padding: 10px 18px;
   }
   .infor p {

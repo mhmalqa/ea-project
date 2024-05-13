@@ -4,6 +4,8 @@ import "./recent.css";
 import RecentCard from "./RecentCard";
 import Post from "../post/Post";
 import { HeaderRel } from "./Header-rel";
+import { list } from "../../data/Data";
+import { Link } from "react-router-dom";
 
 const Recent = ({ language, isHome }) => {
   // تحديد عنوان العنصر والعنوان الفرعي بناءً على اللغة المحددة
@@ -17,6 +19,9 @@ const Recent = ({ language, isHome }) => {
     language === "arabic"
       ? "رقم الترخيص 1100012564"
       : "License Number 1100012564";
+  const scrollToTop = () => {
+    window.scrollTo(0, 0); // التمرير إلى أعلى الصفحة
+  };
 
   return (
     <>
@@ -96,7 +101,14 @@ const Recent = ({ language, isHome }) => {
         <Post language={language} />
         <div className="container">
           <Heading title={language === "arabic" ? "العقارات" : "Real Estate"} />
+          <p style={{ textAlign: "center" }}>جميع العقارات : ({list.length})</p>
           <RecentCard language={language} isHome={isHome} />
+          <Link to="/real-estate" className="more">
+            <button className="btn-more" onClick={scrollToTop}>
+              {" "}
+              جميع العقارات <i class="fa-solid fa-arrow-left"></i>
+            </button>
+          </Link>
         </div>
       </section>
     </>

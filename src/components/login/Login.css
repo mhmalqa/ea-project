@@ -1,5 +1,3 @@
-
-
 .container-login {
   position: relative;
   width: 100%;
@@ -137,7 +135,7 @@
 }
 
 .btn:hover {
-  background-color: #3969bd;
+  background-color: #3c9e26;
 }
 .panels-container {
   position: absolute;
@@ -213,6 +211,9 @@
   height: 41px;
   font-weight: 600;
   font-size: 0.8rem;
+}
+.container-login footer {
+  display: none;
 }
 
 .right-panel .image,
@@ -298,7 +299,6 @@
     transition: 2s ease-in-out;
   }
 
-
   .right-panel .image,
   .right-panel .content {
     transform: translateY(300px);
@@ -321,7 +321,7 @@
   .container-login .panel .content {
     padding: 0.5rem 1rem;
   }
- .container-login {
+  .container-login {
     padding: 1.5rem;
   }
 
@@ -329,5 +329,4 @@
     bottom: 72%;
     left: 50%;
   }
-
 }
