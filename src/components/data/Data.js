@@ -175,6 +175,8 @@ export const list = [
     price_en: "750,000",
     type: "فيلا",
     type_en: "Villa",
+    description: "الوصف",
+    description_en: "description",
   },
   {
     id: 2,
@@ -189,6 +191,8 @@ export const list = [
     price_en: "9,750",
     type: "شقة",
     type_en: "Apartment",
+    description: "الوصف",
+    description_en: "description",
   },
   {
     id: 2,
@@ -203,6 +207,8 @@ export const list = [
     price_en: "9,750",
     type: "شقة",
     type_en: "Apartment",
+    description: "الوصف",
+    description_en: "description",
   },
   {
     id: 2,
@@ -217,6 +223,8 @@ export const list = [
     price_en: "9,750",
     type: "شقة",
     type_en: "Apartment",
+    description: "الوصف",
+    description_en: "description",
   },
   {
     id: 2,
@@ -231,6 +239,8 @@ export const list = [
     price_en: "9,750",
     type: "شقة",
     type_en: "Apartment",
+    description: "الوصف",
+    description_en: "description",
   },
   {
     id: 2,
@@ -245,6 +255,8 @@ export const list = [
     price_en: "9,750",
     type: "شقة",
     type_en: "Apartment",
+    description: "الوصف",
+    description_en: "description",
   },
   {
     id: 2,
@@ -259,6 +271,8 @@ export const list = [
     price_en: "9,750",
     type: "شقة",
     type_en: "Apartment",
+    description: "الوصف",
+    description_en: "description",
   },
 
   // يمكنك استكمال القائمة بالعناصر الأخرى هنا...

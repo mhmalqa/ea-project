@@ -17,13 +17,13 @@ import Heading from "../../../common/Heading";
 
 export function ViewProperty({ location }) {
   const [open, setOpen] = React.useState(false);
-  const { item, language } = location.state;
-
+  const { item } = location.state;
+  const dir = document.querySelector("html").getAttribute("dir");
   return (
     <>
       <section className="viewpropery">
         <div className="container">
-          <Heading title={language === "arabic" ? item.name : item.name_en} />
+          {/* <Heading title={dir !== "rtl" ? item.name_en : item.name} /> */}
 
           <div className="view-img">
             <img src={item.cover} alt="" srcset="" />
@@ -33,31 +33,36 @@ export function ViewProperty({ location }) {
                 className="btn"
                 onClick={() => setOpen(true)}
               >
-                <i class="fa-solid fa-camera"></i>
-                معاينة المزيد من الصور
+                <i className="fa-solid fa-camera"></i>
+                {dir !== "rtl" ? "View More Photos" : "معاينة المزيد من الصور"}
               </button>
               <a href="#" target="_blank" rel="noopener noreferrer">
-                <i class="fa-solid fa-location-dot"></i>
-                موقع العقار
+                <i className="fa-solid fa-location-dot"></i>
+                {dir !== "rtl" ? "Property Location" : "موقع العقار"}
               </a>
             </div>
           </div>
-          <div className="containt">
-            <p>
-              {item.price}ريال {"  "}
-            </p>
+          <div
+            className="containt"
+            style={{
+              [dir !== "rtl" ? "right" : "left"]: "11%",
+            }}
+          >
+            <p>{dir === "rtl" ? `${item.price} ريال` : `ريال ${item.price}`}</p>
             <div>
               <a href="tel:+12136004952" className="whats">
-                <i class="fa-brands fa-whatsapp"></i>
-                واتساب
+                <i className="fa-brands fa-whatsapp"></i>
+                {dir === "rtl" ? "واتساب" : "WhatsApp"}
               </a>
-              <a href="mailto:mahmod.sy152@gmail.com" className="email">
-                <i class="fa-solid fa-envelope"></i> ايميل
+              <a href="mailto:baderalsiwan@gmail.com" className="email">
+                <i className="fa-solid fa-envelope"></i>{" "}
+                {dir === "rtl" ? "ايميل" : "Email"}
               </a>
             </div>
           </div>
+
           <div className="table-div ">
-            <h1>{language === "arabic" ? item.name : item.name_en}</h1>
+            <h1>{dir === "rtl" ? item.name : item.name_en}</h1>
             <div>
               <table>
                 <tr>
@@ -77,8 +82,11 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th className="icon-a">نوع العقار:</th>
-                  <td>{item.type}</td>
+                  <th className="icon-a">
+                    {dir !== "rtl" ? "Property type:" : "نوع العقار:"}
+                  </th>
+
+                  <td>{dir !== "rtl" ? item.type_en : item.type}</td>
                   <th>
                     <svg
                       width="24"
@@ -95,7 +103,7 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>مساحة العقار:</th>
+                  <th>{dir !== "rtl" ? "Property area:" : "مساحة العقار:"}</th>
                   <td>150m</td>
                 </tr>
                 <tr>
@@ -115,7 +123,10 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>اتجاه الشارع:</th>
+                  <th>
+                    {dir !== "rtl" ? "Street direction:" : "اتجاه الشارع:"}
+                  </th>
+
                   <td></td>
                   <th>
                     <svg
@@ -133,7 +144,8 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>الحمامات:</th>
+                  <th>{dir !== "rtl" ? "Bathrooms:" : "الحمامات:"}</th>
+
                   <td>150m</td>
                 </tr>
                 <tr>
@@ -153,8 +165,11 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>عدد غرف النوم:</th>
-                  <td>{item.type}</td>
+                  <th>
+                    {dir !== "rtl" ? "Number of Bedrooms:" : "عدد غرف النوم:"}
+                  </th>
+
+                  <td>{dir !== "rtl" ? item.type_en : item.type}</td>
                   <th>
                     <svg
                       width="24"
@@ -171,7 +186,11 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>طول قطعة الأرض:</th>
+                  <th>
+                    {dir !== "rtl"
+                      ? "Length of Land Piece:"
+                      : "طول قطعة الأرض:"}
+                  </th>
                   <td>150m</td>
                 </tr>
                 <tr>
@@ -191,8 +210,8 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>عمر العقار:</th>
-                  <td>{item.type}</td>
+                  <th>{dir !== "rtl" ? "Property Age:" : "عمر العقار:"}</th>
+                  <td>{dir !== "rtl" ? item.type_en : item.type}</td>
                   <th>
                     <svg
                       width="24"
@@ -209,7 +228,7 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>عرض الشارع:</th>
+                  <th>{dir !== "rtl" ? "Street Width:" : "عرض الشارع:"}</th>
                   <td>150m</td>
                 </tr>
                 <tr>
@@ -229,27 +248,20 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>عرض قطعة الأرض:</th>
-                  <td colSpan={3}>{item.type}</td>
+                  <th>{dir !== "rtl" ? "Land Width:" : "عرض قطعة الأرض:"}</th>
+                  <td colSpan={3}>
+                    {dir !== "rtl" ? item.type_en : item.type}
+                  </td>
                 </tr>
               </table>
             </div>
             <hr />
             <div className="desc-more">
-              <h4>الوصف</h4>
-              <p>
-                شقه للبيع في فيلا باليرموك موقع متميز قريبة من جميع الخدمات
-                والمرافق تملك معنا العقار بكل سهولة ويسر الأوراق والصكوك وشهادة
-                إتمام البناء جاهزة وخالصه البيع كاش او بنك كافة الضمانات متوفرة
-                إشراف هندسي متكامل علي جميع مراحل البناء والتشطيب يتكون من : (
-                مدخل سيارة ؛ مجلس رجال مع دورة مياة ؛ مقلط صالة ؛ مطبخ ؛ ؛ 1ارفه
-                ماستر؛ 1 غرفة نوم مع دورة مياة ) الدور العلوي ( سطح خاص ) تخليص
-                جميع المعاملات في جميع البنوك والشركات الخاصه الضمانات :-
-                الكهرباء 25 عام شركة الفنار السباك
-              </p>
+              <h4>{dir !== "rtl" ? "Description" : "الوصف"}</h4>
+              <p>{dir !== "rtl" ? item.description_en : item.description}</p>
             </div>
             <hr />
-            <h4>رقم الترخيص :</h4>
+            <h4>{dir !== "rtl" ? "License Number" : "رقم الترخيص"}</h4>
           </div>
 
           <Lightbox

@@ -82,7 +82,7 @@ const RecentCard = ({ language, isHome }) => {
                   <Link
                     to={{
                       pathname: "/view", // المسار المستهدف
-                      state: { item, language }, // البيانات المراد تمريرها
+                      state: { item }, // البيانات المراد تمريرها
                     }}
                   >
                     <button className="btn2" onClick={scrollToTop}>

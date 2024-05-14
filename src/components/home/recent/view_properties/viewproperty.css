@@ -51,7 +51,7 @@
 .table-div {
   padding: 40px 0;
   font-size: 18px;
-  text-align: right;
+  text-align: justify;
   margin: auto 25px;
   width: 70%;
 }
@@ -75,10 +75,6 @@ table td {
 .viewpropery .containt {
   position: fixed;
   top: 5.8rem;
-  /*لتحديدالمسافةمنالأعلى*/
-  left: 10%;
-  /*لتحديدالمسافةمناليسار*/
-  width: 22rem;
   height: 9rem;
   padding: 15px 0px;
   background-color: #fff;
@@ -90,6 +86,7 @@ table td {
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
+  z-index: 99;
 }
 .viewpropery .containt div {
   margin-top: 40px;
@@ -97,19 +94,44 @@ table td {
 .viewpropery .containt a {
   margin: 0 15px;
   color: #fff;
-  padding: 15px 30px;
+  padding: 15px 20px;
   border-radius: 10px;
   font-size: 15px;
   text-align: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
 .viewpropery .containt .whats {
   background-color: rgb(106, 183, 29);
-  
 }
 .viewpropery .containt .email {
   background-color: rgb(232, 46, 13);
 }
 .viewpropery .containt i {
   font-size: 20px;
-  margin-left: 4px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+@media screen and (max-width: 1325px) and (min-width: 1024px) {
+  .table-div {
+    font-size: 14px;
+  }
+  .viewpropery .containt {
+    margin: auto -6%;
+    width: 23%;
+    font-size: 15px;
+  }
+  .viewpropery .containt a {
+    padding: 10px 15px;
+    font-size: 12px;
+    margin: auto 2px;
+  }
+  .div-button button,
+.div-button a {
+  font-size: 12px;
+  padding: 15px 15px;
+}
+  
 }
