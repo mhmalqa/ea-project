@@ -45,10 +45,19 @@ export function ViewProperty({ location }) {
           <div
             className="containt"
             style={{
-              [dir !== "rtl" ? "right" : "left"]: "11%",
+              [dir !== "rtl" ? "right" : "left"]: "10%",
             }}
           >
             <p>{dir === "rtl" ? `${item.price} ريال` : `ريال ${item.price}`}</p>
+            <span
+              style={{
+                background:
+                  item.category_en === "For Sale" ? "#25b5791a" : "#ff98001a",
+                color: item.category_en === "For Sale" ? "#25b579" : "#ff9800",
+              }}
+            >
+              {item.category}
+            </span>
             <div>
               <a href="tel:+12136004952" className="whats">
                 <i className="fa-brands fa-whatsapp"></i>
@@ -62,7 +71,8 @@ export function ViewProperty({ location }) {
           </div>
 
           <div className="table-div ">
-            <h1>{dir === "rtl" ? item.name : item.name_en}</h1>
+            <h2>{dir === "rtl" ? item.name : item.name_en}</h2>
+            <p>{dir === "rtl" ? item.location : item.location_en}</p>
             <div>
               <table>
                 <tr>
@@ -82,7 +92,7 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th className="icon-a">
+                  <th className="th">
                     {dir !== "rtl" ? "Property type:" : "نوع العقار:"}
                   </th>
 
@@ -103,7 +113,9 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>{dir !== "rtl" ? "Property area:" : "مساحة العقار:"}</th>
+                  <th className="th">
+                    {dir !== "rtl" ? "Property area:" : "مساحة العقار:"}
+                  </th>
                   <td>150m</td>
                 </tr>
                 <tr>
@@ -123,7 +135,7 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>
+                  <th className="th">
                     {dir !== "rtl" ? "Street direction:" : "اتجاه الشارع:"}
                   </th>
 
@@ -144,7 +156,9 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>{dir !== "rtl" ? "Bathrooms:" : "الحمامات:"}</th>
+                  <th className="th">
+                    {dir !== "rtl" ? "Bathrooms:" : "الحمامات:"}
+                  </th>
 
                   <td>150m</td>
                 </tr>
@@ -165,7 +179,7 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>
+                  <th className="th">
                     {dir !== "rtl" ? "Number of Bedrooms:" : "عدد غرف النوم:"}
                   </th>
 
@@ -186,7 +200,7 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>
+                  <th className="th">
                     {dir !== "rtl"
                       ? "Length of Land Piece:"
                       : "طول قطعة الأرض:"}
@@ -210,7 +224,9 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>{dir !== "rtl" ? "Property Age:" : "عمر العقار:"}</th>
+                  <th className="th">
+                    {dir !== "rtl" ? "Property Age:" : "عمر العقار:"}
+                  </th>
                   <td>{dir !== "rtl" ? item.type_en : item.type}</td>
                   <th>
                     <svg
@@ -228,7 +244,9 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>{dir !== "rtl" ? "Street Width:" : "عرض الشارع:"}</th>
+                  <th className="th">
+                    {dir !== "rtl" ? "Street Width:" : "عرض الشارع:"}
+                  </th>
                   <td>150m</td>
                 </tr>
                 <tr>
@@ -248,7 +266,9 @@ export function ViewProperty({ location }) {
                       ></path>
                     </svg>
                   </th>
-                  <th>{dir !== "rtl" ? "Land Width:" : "عرض قطعة الأرض:"}</th>
+                  <th className="th">
+                    {dir !== "rtl" ? "Land Width:" : "عرض قطعة الأرض:"}
+                  </th>
                   <td colSpan={3}>
                     {dir !== "rtl" ? item.type_en : item.type}
                   </td>
