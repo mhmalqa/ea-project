@@ -56,7 +56,7 @@ export function ViewProperty({ location }) {
                 color: item.category_en === "For Sale" ? "#25b579" : "#ff9800",
               }}
             >
-              {item.category}
+              {dir !== "rtl" ? item.category_en : item.category}
             </span>
             <div>
               <a href="tel:+12136004952" className="whats">

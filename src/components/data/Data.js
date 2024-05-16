@@ -324,130 +324,7 @@ export const awards = {
     },
   ],
 };
-export const location = [
-  {
-    id: 1,
-    name: "New Orleans, Louisiana",
-    Villas: "12 Villas",
-    Apartments: "10 Apartments",
-    Offices: "07 Offices",
-    cover: "./images/location/city-1.png",
-  },
-  {
-    id: 2,
-    name: "Jerrsy, United State",
-    Villas: "12 Villas",
-    Apartments: "10 Apartments",
-    Offices: "07 Offices",
-    cover: "./images/location/city-2.png",
-  },
-  {
-    id: 3,
-    name: "Liverpool, London",
-    Villas: "12 Villas",
-    Apartments: " 10 Apartments",
-    Offices: "07 Offices",
-    cover: "./images/location/city-3.png",
-  },
-  {
-    id: 4,
-    name: "NewYork, United States",
-    Villas: "12 Villas",
-    Apartments: " 10 Apartments",
-    Offices: "07 Offices",
-    cover: "./images/location/city-4.png",
-  },
-  {
-    id: 5,
-    name: "Montreal, Canada",
-    Villas: "12 Villas",
-    Apartments: " 10 Apartments",
-    Offices: "07 Offices",
-    cover: "./images/location/city-5.png",
-  },
-  {
-    id: 6,
-    name: "California, USA",
-    Villas: "12 Villas",
-    Apartments: " 10 Apartments",
-    Offices: "07 Offices",
-    cover: "./images/location/city-6.png",
-  },
-];
-export const team = [
-  {
-    list: "50",
-    cover: "../images/customer/team-1.jpg",
-    address: "Liverpool, Canada",
-    name: "Sargam S. Singh",
-    icon: [
-      <i class="fa-brands fa-facebook-f"></i>,
-      <i class="fa-brands fa-linkedin"></i>,
-      <i class="fa-brands fa-twitter"></i>,
-      <i class="fa-brands fa-instagram"></i>,
-    ],
-  },
-  {
-    list: "70",
-    cover: "../images/customer/team-2.jpg",
-    address: "Montreal, Canada",
-    name: "Harijeet M. Siller",
-    icon: [
-      <i class="fa-brands fa-facebook-f"></i>,
-      <i class="fa-brands fa-linkedin"></i>,
-      <i class="fa-brands fa-twitter"></i>,
-      <i class="fa-brands fa-instagram"></i>,
-    ],
-  },
-  {
-    list: "80",
-    cover: "../images/customer/team-3.jpg",
-    address: "Denever, USA",
-    name: "Anna K. Young",
-    icon: [
-      <i class="fa-brands fa-facebook-f"></i>,
-      <i class="fa-brands fa-linkedin"></i>,
-      <i class="fa-brands fa-twitter"></i>,
-      <i class="fa-brands fa-instagram"></i>,
-    ],
-  },
-  {
-    list: "51",
-    cover: "../images/customer/team-4.jpg",
-    address: "2272 Briarwood Drive",
-    name: "Michael P. Grimaldo",
-    icon: [
-      <i class="fa-brands fa-facebook-f"></i>,
-      <i class="fa-brands fa-linkedin"></i>,
-      <i class="fa-brands fa-twitter"></i>,
-      <i class="fa-brands fa-instagram"></i>,
-    ],
-  },
-  {
-    list: "42",
-    cover: "../images/customer/team-5.jpg",
-    address: "2272 Briarwood Drive",
-    name: "Michael P. Grimaldo",
-    icon: [
-      <i class="fa-brands fa-facebook-f"></i>,
-      <i class="fa-brands fa-linkedin"></i>,
-      <i class="fa-brands fa-twitter"></i>,
-      <i class="fa-brands fa-instagram"></i>,
-    ],
-  },
-  {
-    list: "38",
-    cover: "./images/customer/team-5.jpg",
-    address: "Montreal, USA",
-    name: "Adam K. Jollio",
-    icon: [
-      <i class="fa-brands fa-facebook-f"></i>,
-      <i class="fa-brands fa-linkedin"></i>,
-      <i class="fa-brands fa-twitter"></i>,
-      <i class="fa-brands fa-instagram"></i>,
-    ],
-  },
-];
+
 export const posts = {
   post_rel: [
     {
@@ -518,7 +395,7 @@ export const footer = [
     title: "Contact Us",
     text: [
       {
-        list: "+1 2136004952",
+        list: "+966 50 860 5772",
         icons: <i class="fa-solid fa-phone" style={{ margin: "5px" }}></i>,
       },
       {
@@ -532,7 +409,7 @@ export const footer = [
     title: "تواصل معنا",
     text: [
       {
-        list: "+1 2136004952",
+        list: "+966 50 860 5772",
         icons: <i class="fa-solid fa-phone" style={{ margin: "5px" }}></i>,
       },
       {

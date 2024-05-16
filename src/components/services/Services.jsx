@@ -17,7 +17,11 @@ const Services = ({ language, inHome }) => {
 
   return (
     <>
-      {inHome === "true" ? "" : <Back name={title} cover={img} />}
+      {inHome === "true" ? (
+        ""
+      ) : (
+        <Back title={title} name={subtitle} cover={img} />
+      )}
       <section className="services background">
         <div className="container">
           <Heading title={title} />
@@ -116,7 +120,7 @@ const Services = ({ language, inHome }) => {
         </div>
         <Post language={language} isServices={true} />
         <Heading subtitle={subtitle} />
-        <div className="container grid3" >
+        <div className="container grid3">
           {services.map((item) => (
             <CardServices
               language={language}
