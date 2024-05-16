@@ -101,12 +101,16 @@ const Recent = ({ language, isHome }) => {
         <Post language={language} />
         <div className="container">
           <Heading title={language === "arabic" ? "العقارات" : "Real Estate"} />
-          <p style={{ textAlign: "center" }}>جميع العقارات : ({list.length})</p>
+          <p style={{ textAlign: "center" }}>
+            {language === "arabic" ? "جميع العقارات" : "All Properties"} : (
+            {list.length})
+          </p>
+
           <RecentCard language={language} isHome={isHome} />
           <Link to="/real-estate" className="more">
             <button className="btn-more" onClick={scrollToTop}>
-              {" "}
-              جميع العقارات <i class="fa-solid fa-arrow-left"></i>
+              {language === "arabic" ? "جميع العقارات" : "All Properties"}{" "}
+              <i className="fa-solid fa-arrow-left"></i>
             </button>
           </Link>
         </div>
