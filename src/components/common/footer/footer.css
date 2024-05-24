@@ -68,6 +68,7 @@ footer .btn-location i {
   margin: 0 8px;
 }
 
+
 @media screen and (max-width: 800px) {
   footer .container {
     grid-template-columns: repeat(2, 1fr);

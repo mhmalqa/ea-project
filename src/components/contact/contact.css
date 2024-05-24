@@ -3,6 +3,7 @@
 }
 
 .contact input {
+  font-family: "Alexandria", sans-serif;
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 15px;
@@ -57,8 +58,8 @@
   font-size: 14px;
   color: rgba(255, 255, 255, 0.727);
 }
-.container-con button:hover{
-  color:#ffffff;
+.container-con button:hover {
+  color: #ffffff;
   background-color: #34be57;
 }
 

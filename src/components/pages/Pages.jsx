@@ -17,7 +17,8 @@ import Contact from "../contact/Contact";
 import { ViewProperty } from "../home/recent/view_properties/ViewProperty";
 import { LoginBage } from "../login/Login";
 import { RecentBage } from "../recentbage/RecentBage";
-
+import { CardContact } from "../dashbord/contact/CardContact";
+import { Urls } from "../dashbord/urls/Url";
 const Pages = () => {
   const defaultLanguage = localStorage.getItem("language") || "english";
   const [language, setLanguage] = useState(defaultLanguage);
@@ -50,9 +51,12 @@ const Pages = () => {
           <Route path="/pricing" component={Pricing} />
           <Route path="/contact" component={Contact} />
           <Route path="/view" component={ViewProperty} />
+          <Route path="/dash" component={CardContact} />
+          <Route path="/links" component={Urls} />
+
           <Redirect from="/" to="/home" />
         </Switch>
-        <Footer language={language} />
+        <Footer language={language} /> {/* يتم عرض Footer بشكل افتراضي */}
       </Router>
     </>
   );

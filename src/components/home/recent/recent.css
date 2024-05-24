@@ -47,14 +47,16 @@
 .infor p span {
   font-weight: 700;
 }
+.dv-btn {
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 .more .btn-more {
-  margin: 10px 10px;
+  text-align: center;
   background-color: #5d4fbb;
   border-radius: 40px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  -o-border-radius: 40px;
 }
 
 @media screen and (max-width: 800px) {

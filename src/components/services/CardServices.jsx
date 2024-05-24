@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styles from "./CardServices.module.css";
 import { Col } from "react-bootstrap";
 
 const CardServices = (props) => {
   const [isFlipped, setIsFlipped] = useState(false);
+
+  
+
 
   const handleFlip = (e) => {
     // Check if the click is on a button
@@ -11,11 +14,6 @@ const CardServices = (props) => {
       return; // Don't flip if the click is on a button
     }
     setIsFlipped(!isFlipped);
-  };
-  const handleOrderNowClick = () => {
-    const serviceName = props.name; // اسم الخدمة
-    const url = `/contact?service=${encodeURIComponent(serviceName)}`;
-    window.location.href = url;
   };
 
   return (
@@ -32,12 +30,11 @@ const CardServices = (props) => {
         <h2>{props.name}</h2>
         <p className="desc">{props.desc_f}</p>
         <div className={styles.buttonContainer}>
-          <button className="btn-serv" onClick={handleOrderNowClick}>
-            {props.language === "arabic" ? "اطلب الان" : "Order Now"}
-          </button>
-          <button className="btn-serv">
-            {props.language === "arabic" ? "اقرأ المزيد" : "Read More"}
-          </button>
+          <a href={props.url}>
+            <button className="btn-serv">
+              {props.language === "arabic" ? "اطلب الان" : "Order Now"}
+            </button>
+          </a>
         </div>
       </div>
       <div className={`${styles.side} ${styles.back}`}>

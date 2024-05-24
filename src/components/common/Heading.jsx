@@ -26,7 +26,7 @@ const Heading = ({
 
         <h3>{description}</h3>
         <h3>{description2}</h3>
-        {btn_view && <SocialMedia insta="www.instagram.com" />}
+        {btn_view && <SocialMedia />}
 
         {btn_view && (
           // استخدام الرابط مع التمرير السلس

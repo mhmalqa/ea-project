@@ -177,6 +177,9 @@ export const list = [
     type_en: "Villa",
     description: "الوصف",
     description_en: "description",
+    imgs:{
+      
+    }
   },
   {
     id: 2,

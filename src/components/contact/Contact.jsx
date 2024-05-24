@@ -3,6 +3,8 @@ import img from "../images/contactusar.jpg";
 import Back from "../common/Back";
 import "./contact.css";
 import Heading from "../common/Heading";
+import { useLocation } from "react-router-dom";
+import axios from "axios";
 
 const Contact = ({ inHome, language }) => {
   const lan = document.querySelector("html").dir;
@@ -10,18 +12,55 @@ const Contact = ({ inHome, language }) => {
     if (lan === "rtl") language = "arabic";
   }
   const isArabic = language === "arabic";
-  // استخدام useState لإنشاء حالة محلية
-  const [service, setService] = useState("");
 
+  const [allFieldsFilled, setAllFieldsFilled] = useState(false);
+
+  const [data, setData] = useState({
+    name: "",
+    subject: "",
+    email: "",
+    phone_number: "",
+  });
+
+  const handelInputChange = (event) => {
+    const { name, value } = event.target;
+    setData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const serviceParam = urlParams.get("service");
+    // التحقق مما إذا كانت جميع الحقول مملوءة
+    const filled = Object.values(data).every((value) => value.trim() !== "");
+    setAllFieldsFilled(filled);
+  }, [data]);
+  const sendMessage = async () => {
+    try {
+      const baseUrl = "http://127.0.0.1:8000/api";
+      const fdata = new FormData();
+      fdata.append("name", data.name);
+      fdata.append("subject", data.subject);
+      fdata.append("email", data.email);
+      fdata.append("phone_number", data.phone_number);
 
-    // تحديث القيمة في حالة المكون
-    if (serviceParam) {
-      setService(serviceParam);
+      const response = await axios.post(`${baseUrl}/message`, fdata);
+
+      if (response.status === 200) {
+        alert("تم ارسال ردك");
+        // تفريغ الحقول بعد الإرسال بنجاح
+        setData({
+          name: "",
+          subject: "",
+          email: "",
+          phone_number: "",
+        });
+      } else {
+        console.log("Error With Get Data");
+      }
+    } catch (error) {
+      console.log(error);
     }
-  }, []);
+  };
 
   return (
     <>
@@ -61,35 +100,53 @@ const Contact = ({ inHome, language }) => {
               </p>
             </div>
             <div className="tow-section">
-              <form>
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                }}
+              >
                 <div className="subj_input">
                   <input
+                    name="subject"
+                    onChange={handelInputChange}
                     type="text"
                     placeholder={isArabic ? "الموضوع" : "Subject"}
+                    value={data.subject}
                     required
-                    value={service || ""}
-                    onChange={(e) => setService(e.target.value)}
+                    // value={service ?? ""}
+                    // onChange={(e) => setService(e.target.value)}
                   />
                 </div>
                 <div>
                   <input
+                    name="name"
+                    onChange={handelInputChange}
                     type="text"
                     placeholder={isArabic ? "الاسم" : "Name"}
+                    value={data.name}
                     required
                   />
                   <input
+                    name="email"
+                    onChange={handelInputChange}
                     type="email"
                     placeholder={isArabic ? "البريد الإلكتروني" : "Email"}
+                    value={data.email}
                     required
                   />
                 </div>
                 <div>
                   <input
+                    name="phone_number"
+                    onChange={handelInputChange}
                     type="tel"
                     placeholder={isArabic ? "الهاتف" : "Phone"}
+                    value={data.phone_number}
                     required
                   />
-                  <button>{isArabic ? "إرسال الطلب" : "Submit Request"}</button>
+                  <button onClick={allFieldsFilled ? sendMessage : undefined}>
+                    {isArabic ? "إرسال الطلب" : "Submit Request"}
+                  </button>
                 </div>
               </form>
             </div>

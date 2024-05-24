@@ -39,6 +39,7 @@ const Footer = ({ language }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
+                
                 <button className="btn-location">
                   {language === "arabic" ? " الموقع" : "location"}
 

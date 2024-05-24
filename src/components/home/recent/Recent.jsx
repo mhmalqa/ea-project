@@ -107,12 +107,14 @@ const Recent = ({ language, isHome }) => {
           </p>
 
           <RecentCard language={language} isHome={isHome} />
-          <Link to="/real-estate" className="more">
-            <button className="btn-more" onClick={scrollToTop}>
-              {language === "arabic" ? "جميع العقارات" : "All Properties"}{" "}
-              <i className="fa-solid fa-arrow-left"></i>
-            </button>
-          </Link>
+          <div className="dv-btn">
+            <Link to="/real-estate" className="more">
+              <button className="btn-more" onClick={scrollToTop}>
+                {language === "arabic" ? "جميع العقارات" : "All Properties"}{" "}
+                <i className="fa-solid fa-arrow-left"></i>
+              </button>
+            </Link>
+          </div>
         </div>
       </section>
     </>

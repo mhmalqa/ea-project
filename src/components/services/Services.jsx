@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import img from "../images/services.jpeg";
 import Back from "../common/Back";
 import CardServices from "./CardServices";
@@ -6,6 +6,7 @@ import { services } from "../data/Data";
 import Heading from "../common/Heading";
 import Post from "../home/post/Post";
 import "./CardServices.module.css";
+import axios from "axios";
 
 const Services = ({ language, inHome }) => {
   const title =
@@ -14,6 +15,35 @@ const Services = ({ language, inHome }) => {
       : "Administrative and Financial Services and Financing Solutions";
 
   const subtitle = language === "arabic" ? "الخدمات" : "Services";
+
+  const baseUrl = "http://127.0.0.1:8000/api";
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  async function fetchData() {
+    try {
+      const response = await axios.get(`${baseUrl}/urls`);
+      setData(response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+      setError("Error fetching data");
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return;
+  }
+
+  if (error) {
+    return;
+  }
 
   return (
     <>
@@ -121,14 +151,17 @@ const Services = ({ language, inHome }) => {
         <Post language={language} isServices={true} />
         <Heading subtitle={subtitle} />
         <div className="container grid3">
-          {services.map((item) => (
-            <CardServices
-              language={language}
-              name={language === "arabic" ? item.name : item.name_en}
-              frontImage={item.cover}
-              desc_f={language === "arabic" ? item.desc_f : item.desc_f_en}
-              desc_b={language === "arabic" ? item.desc_b : item.desc_b_en}
-            />
+          {services.map((item, index) => (
+            <>
+              <CardServices
+                language={language}
+                name={language === "arabic" ? item.name : item.name_en}
+                frontImage={item.cover}
+                desc_f={language === "arabic" ? item.desc_f : item.desc_f_en}
+                desc_b={language === "arabic" ? item.desc_b : item.desc_b_en}
+                url={data[index + 4].account_url}
+              />
+            </>
           ))}
         </div>
       </section>
