@@ -45,6 +45,8 @@
 .btn8:hover {
   background-color: rgb(53, 74, 113);
 }
+
+
 @media screen and (max-width: 768px) {
   .about .container {
     flex-direction: column;

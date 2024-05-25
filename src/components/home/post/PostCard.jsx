@@ -25,7 +25,6 @@ const PriceCard = (props) => {
             <img
               className={`center-image ${index === 1 ? "large" : ""}`}
               src={
-                process.env.PUBLIC_URL +
                 props.posts[(startPostIndex + index) % props.posts.length]
                   .img
               }

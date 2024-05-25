@@ -1,3 +1,4 @@
+import axios from "axios";
 export const nav = [
   {
     text_ar: "الصفحة الرئيسية",
@@ -24,6 +25,26 @@ export const nav = [
     text_ar: "اتصل بنا",
     text_en: "Contact Us",
     path: "/contact",
+  },
+  {
+    text_ar: "نشر منشور",
+    text_en: "Publich Post",
+    path: "/publichpost",
+  },
+  {
+    text_ar: "جميع المناشير",
+    text_en: "Posts",
+    path: "/removepublichpost",
+  },
+  {
+    text_ar: "المراسلات",
+    text_en: "Messages",
+    path: "/dash",
+  },
+  {
+    text_ar: "الروابط",
+    text_en: "Links",
+    path: "/links",
   },
 ];
 
@@ -177,9 +198,7 @@ export const list = [
     type_en: "Villa",
     description: "الوصف",
     description_en: "description",
-    imgs:{
-      
-    }
+    imgs: {},
   },
   {
     id: 2,
@@ -328,22 +347,51 @@ export const awards = {
   ],
 };
 
-export const posts = {
-  post_rel: [
-    {
-      img: "/images/posts/post2.jpg",
-      alt: "Post 1",
-      srcSet: "",
-    },
-    {
-      img: "/images/posts/post3.jpg",
-      alt: "Post 2",
-      srcSet: "",
-    },
-  ],
-  post_adm: [],
+// export const posts = {
+//   post_rel: [
+//     {
+//       img: "/images/posts/post2.jpg",
+//       alt: "Post 1",
+//       srcSet: "",
+//     },
+//     {
+//       img: "/images/posts/post3.jpg",
+//       alt: "Post 2",
+//       srcSet: "",
+//     },
+//   ],
+//   post_adm: [],
+// };
+
+const baseUrl = "http://127.0.0.1:8000/api";
+
+const fetchPostsFromAPI = async () => {
+  try {
+    const response = await axios.get(`${baseUrl}/showpost`);
+    const postsData = response.data;
+
+    // Process the data to match the `posts` object structure
+    const processedData = {
+      post_rel: postsData.map((post) => ({
+        img: `http://127.0.0.1:8000/${post.image_path}`,
+        alt: post.type,
+        srcSet: "",
+      })),
+      post_adm: [], // Add logic for post_adm if needed
+    };
+
+    return processedData;
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return {
+      post_rel: [],
+      post_adm: [],
+    };
+  }
 };
 
+// Call the function and export the posts object
+export const posts = await fetchPostsFromAPI();
 export const footer = [
   {
     language: "arabic",

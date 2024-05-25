@@ -19,6 +19,8 @@ import { LoginBage } from "../login/Login";
 import { RecentBage } from "../recentbage/RecentBage";
 import { CardContact } from "../dashbord/contact/CardContact";
 import { Urls } from "../dashbord/urls/Url";
+import ImageUpload from "../dashbord/posts/PublishPost";
+import PostsPage from "../dashbord/posts/RemovePost";
 const Pages = () => {
   const defaultLanguage = localStorage.getItem("language") || "english";
   const [language, setLanguage] = useState(defaultLanguage);
@@ -53,6 +55,8 @@ const Pages = () => {
           <Route path="/view" component={ViewProperty} />
           <Route path="/dash" component={CardContact} />
           <Route path="/links" component={Urls} />
+          <Route path="/publichpost" component={ImageUpload} />
+          <Route path="/removepublichpost" component={PostsPage} />
 
           <Redirect from="/" to="/home" />
         </Switch>

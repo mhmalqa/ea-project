@@ -237,6 +237,7 @@ img {
   -webkit-animation: spin 3s linear infinite;
 }
 
+
 @keyframes spin {
   0% {
     transform: rotate(0deg); /* بدء التدوير من زاوية 0 درجة */
@@ -273,6 +274,7 @@ img {
     margin: auto;
   }
 }
+
 @media screen and (max-width: 1224px) and (min-width: 850px) {
   .grid3 {
     grid-template-columns: repeat(2, 1fr);

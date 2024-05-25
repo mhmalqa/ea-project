@@ -29,8 +29,8 @@ const About = (props) => {
             <h2>{isArabic ? "من نحن؟" : "Who We Are?"}</h2>
             <p>
               {isArabic
-                ? "نحن 'مكتب علم الريادة للاستشارات الادارية والمالية'، تأسس على يد بدر محمد الصيوان، الذي حاز على درجة الماجستير في التسويق الدولي من جامعة Strathclyde في المملكة المتحدة، بالإضافة إلى حصوله على درجة البكالوريوس بتخصص محاسبة ومالية مع مرتبة الشرف من جامعة Dundalk Institute of Technology في ايرلندا."
-                : "We are 'Al-Riyada Consultancy for Administrative and Financial Services,' founded by Badr Mohammed Al-Saywan, who holds a master's degree in International Marketing from Strathclyde University in the United Kingdom, in addition to receiving a bachelor's degree in Accounting and Finance with honors from Dundalk Institute of Technology in Ireland."}
+                ? "نحن 'مكتب علم الريادة للاستشارات الإدارية والمالية'، أسسه بدر محمد الصيوان. بدر حاصل على درجة البكالوريوس في محاسبة ومالية مع مرتبة الشرف من Dundalk Institute of Technology في أيرلندا، وعلى دبلوم في إدارة الأعمال من Royal Roads University في فيكتوريا، كندا. يمتلك خبرة غنية في مجال الاستشارات المالية والإدارية، حيث عمل في عدة مكاتب استشارية بارزة، مما أهله لتطوير استراتيجيات فعالة لتحسين الأداء المالي والإداري للشركات."
+                : "We are 'Elm Al Riyada Management and Financial Consulting Firm,' founded by Bader Mohammed Al-Saiwan. Bader holds an honors bachelor's degree in Accounting and Finance from Dundalk Institute of Technology in Ireland, and a diploma in Business Administration from Royal Roads University in Victoria, Canada. He has extensive experience in the field of financial and management consulting, having worked at several prominent consulting firms. This has enabled him to develop effective strategies to improve the financial and managerial performance of companies."}
             </p>
             <p>
               {isArabic
@@ -78,6 +78,7 @@ const About = (props) => {
                 <i class="fa-brands fa-whatsapp"></i>{" "}
                 {isArabic ? "انضم الينا على الواتساب" : "Join us on WhatsApp"}
               </button>
+              
             </a>
           </div>
           {!showBackButton && (
