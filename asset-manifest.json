@@ -1,18 +1,19 @@
 {
   "files": {
-    "main.css": "/ea-project/static/css/main.66407c76.css",
-    "main.js": "/ea-project/static/js/main.10ac5842.js",
+    "main.css": "/ea-project/static/css/main.41b48b2f.css",
+    "main.js": "/ea-project/static/js/main.2dedf96e.js",
     "static/media/about.jpg": "/ea-project/static/media/about.a857f1056c3526d375b6.jpg",
     "static/media/Real-estate.png": "/ea-project/static/media/Real-estate.b05690f73cfad42a09b6.png",
     "static/media/services.jpeg": "/ea-project/static/media/services.376cc8b8422fd402d60b.jpeg",
     "static/media/office.jpg": "/ea-project/static/media/office.3bcc3f3319ba427c7295.jpg",
+    "static/media/6407273_3303162.jpg": "/ea-project/static/media/6407273_3303162.f6a879d7cd7bc80551c3.jpg",
     "static/media/contactusar.jpg": "/ea-project/static/media/contactusar.613d3a0b4929d70d38fb.jpg",
     "index.html": "/ea-project/index.html",
-    "main.66407c76.css.map": "/ea-project/static/css/main.66407c76.css.map",
-    "main.10ac5842.js.map": "/ea-project/static/js/main.10ac5842.js.map"
+    "main.41b48b2f.css.map": "/ea-project/static/css/main.41b48b2f.css.map",
+    "main.2dedf96e.js.map": "/ea-project/static/js/main.2dedf96e.js.map"
   },
   "entrypoints": [
-    "static/css/main.66407c76.css",
-    "static/js/main.10ac5842.js"
+    "static/css/main.41b48b2f.css",
+    "static/js/main.2dedf96e.js"
   ]
 }
