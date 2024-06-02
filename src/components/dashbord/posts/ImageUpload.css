@@ -2,6 +2,7 @@
   border: #232a4d85 3px solid;
   box-shadow: 3px 5px 8px #00000061;
   border-radius: 10px;
+  background-color: #fff;
   -webkit-border-radius: 20px;
 }
 
@@ -14,13 +15,9 @@
   padding: 0.8em 1.5em 0.8em 1.2em;
   color: white;
   background: #ad5389;
-  background: linear-gradient(
-    0deg,
-    rgb(120, 47, 255) 0%,
-    rgb(185, 132, 255) 100%
-  );
+  background: linear-gradient(0deg, rgb(53, 74, 113) 0%, #4481eb 100%);
   border: none;
-  box-shadow: 0 0.7em 1.5em -0.5em rgb(184, 146, 255);
+  box-shadow: 0 0.7em 1.5em -0.5em #276dae;
   letter-spacing: 0.05em;
   border-radius: 20em;
 }
@@ -30,11 +27,11 @@
 }
 
 .cssbuttons-io-button:hover {
-  box-shadow: 0 0.5em 1.5em -0.5em rgb(149, 91, 255);
+  box-shadow: 0 0.5em 1.5em -0.5em rgb(44, 2, 122);
 }
 
 .cssbuttons-io-button:active {
-  box-shadow: 0 0.3em 1em -0.5em rgb(160, 109, 255);
+  box-shadow: 0 0.3em 1em -0.5em rgb(44, 2, 122);
 }
 
 /* remove */
@@ -107,6 +104,5 @@
   border: 1px solid #b20000;
 }
 .ReactModal__Overlay.ReactModal__Overlay--after-open {
-  
   z-index: 999;
 }

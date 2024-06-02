@@ -53,7 +53,6 @@ export function Urls() {
       const response = await axios.post(`${baseUrl}/urls/${name}`, payload);
 
       if (response.status === 200) {
-        
       } else {
         console.log("Error With Get Data");
       }
@@ -91,7 +90,7 @@ export function Urls() {
               name="whatsapp"
               value={data.whatsapp}
               onChange={handleInputChange}
-              onBlur={() => sendMessage("whatsapp", "instagram.com/mhmalqa/")}
+              onBlur={() => sendMessage("whatsapp", data.whatsapp)}
               className="whatsapp"
             />
             <label htmlFor="instagram">رابط الانستاغرام</label>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import Modal from "react-modal";
 import "./ImageUpload.css";
-
+import { MainDashbord } from "../MainDashbord";
 
 const ImageUpload = () => {
   const [image, setImage] = useState(null);
@@ -81,7 +81,6 @@ const ImageUpload = () => {
   return (
     <>
       <section className="padding">
-        <h2 style={styles.formTitle}>نشر منشور</h2>
         <div style={styles.container}>
           <form onSubmit={handleSubmit} style={styles.form}>
             <div style={styles.formGroup}>
@@ -157,17 +156,19 @@ const ImageUpload = () => {
 };
 
 const styles = {
-  formTitle: {
-    textAlign: "center",
-    marginBottom: "20px",
-  },
+  // formTitle: {
+  //   textAlign: "center",
+  //   marginBottom: "20px",
+  // },
   container: {
     maxWidth: "500px",
     margin: "0 auto",
     padding: "20px",
     border: "1px solid #ddd",
-    borderRadius: "5px",
+    borderRadius: "20px",
     boxShadow: "0 0 10px rgba(0,0,0,0.1)",
+    backgroundColor: "rgba(255, 255, 255, 0.3)",
+    backdropFilter: "blur(15px)",
   },
   form: {
     display: "flex",

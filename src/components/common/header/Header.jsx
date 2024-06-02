@@ -63,18 +63,23 @@ const Header = ({ language, setLanguage }) => {
 
             {navList && (
               <li>
-                <li>
-                  <BtnLogin language={language} />
-                  <BtnChoose language={language} setLanguage={setLanguage} />
-                </li>
+                <BtnLogin language={language} onClick={scrollToTop} />
+                <BtnChoose language={language} setLanguage={setLanguage} />
               </li>
             )}
           </ul>
         </div>
-
         <div className="button flex">
           <BtnLogin language={language} />
           <BtnChoose language={language} setLanguage={setLanguage} />
+          
+
+          {/* <img
+          className="icon-dashbord"
+          src={`${homepage}/images/5432747.png`}
+          alt="dashbord"
+          srcset=""
+        /> */}
         </div>
 
         <div className="toggle">

@@ -104,6 +104,14 @@ header .toggle {
   -ms-border-radius: 15px;
   -o-border-radius: 15px;
 }
+.dashbor-div {
+  display: flex;
+}
+.icon-dashbord {
+  font-size: x-large;
+  margin: 0 35px;
+  color: #092744;
+}
 @media screen and (max-width: 1126px) and (min-width: 985px) {
   header img {
     margin: auto -50px;

@@ -16,7 +16,7 @@ export function RecentBage({ language }) {
           cover={img}
         />
 
-        <Recent language={language} isHome={false} />
+        <Recent language={language} isHome={false} isDash={false} />
       </section>
     </>
   );

@@ -7,7 +7,7 @@ import { HeaderRel } from "./Header-rel";
 import { list } from "../../data/Data";
 import { Link } from "react-router-dom";
 
-const Recent = ({ language, isHome }) => {
+const Recent = ({ language, isHome, isDash }) => {
   // تحديد عنوان العنصر والعنوان الفرعي بناءً على اللغة المحددة
   const title =
     language === "arabic" ? "بدر محمد الصيوان" : "Badr Mohammed Al-Saywan";
@@ -28,6 +28,7 @@ const Recent = ({ language, isHome }) => {
       <section className="recent padding">
         <div className="container" style={!isHome ? { display: "none" } : null}>
           {/* استخدام العنوان والعنوان الفرعي المحدد بناءً على اللغة */}
+
           <HeaderRel language={language} />
           <Heading title={title} subtitle={slogan} />
 
@@ -95,10 +96,13 @@ const Recent = ({ language, isHome }) => {
             </div>
           </div>
         </div>
-        <div className="container" style={!isHome ? null : { display: "none" }}>
+        <div
+          className="container"
+          style={!isHome && !isDash ? null : { display: "none" }}
+        >
           <HeaderRel language={language} />
         </div>
-        <Post language={language} />
+        {isDash ? "" : <Post language={language} />}
         <div className="container">
           <Heading title={language === "arabic" ? "العقارات" : "Real Estate"} />
           <p style={{ textAlign: "center" }}>
@@ -106,14 +110,18 @@ const Recent = ({ language, isHome }) => {
             {list.length})
           </p>
 
-          <RecentCard language={language} isHome={isHome} />
+          <RecentCard language={language} isHome={isHome} inDash={isDash} />
           <div className="dv-btn">
             <Link to="/real-estate" className="more">
               {/* <button className="btn-more" onClick={scrollToTop}>
                 {language === "arabic" ? "جميع العقارات" : "All Properties"}{" "}
                 <i className="fa-solid fa-arrow-left"></i>
               </button> */}
-              <button class="contactButton" onClick={scrollToTop}>
+              <button
+                class="contactButton"
+                onClick={scrollToTop}
+                style={isHome && !isDash ? null : { display: "none" }}
+              >
                 {language === "arabic" ? "جميع العقارات" : "All Properties"}
                 <div class="iconButton">
                   <svg

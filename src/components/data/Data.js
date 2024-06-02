@@ -26,26 +26,26 @@ export const nav = [
     text_en: "Contact Us",
     path: "/contact",
   },
-  {
-    text_ar: "نشر منشور",
-    text_en: "Publich Post",
-    path: "/publichpost",
-  },
-  {
-    text_ar: "جميع المناشير",
-    text_en: "Posts",
-    path: "/removepublichpost",
-  },
-  {
-    text_ar: "المراسلات",
-    text_en: "Messages",
-    path: "/dash",
-  },
-  {
-    text_ar: "الروابط",
-    text_en: "Links",
-    path: "/links",
-  },
+  // {
+  //   text_ar: "نشر منشور",
+  //   text_en: "Publich Post",
+  //   path: "/publichpost",
+  // },
+  // {
+  //   text_ar: "جميع المناشير",
+  //   text_en: "Posts",
+  //   path: "/removepublichpost",
+  // },
+  // {
+  //   text_ar: "المراسلات",
+  //   text_en: "Messages",
+  //   path: "/dash",
+  // },
+  // {
+  //   text_ar: "الروابط",
+  //   text_en: "Links",
+  //   path: "/links",
+  // },
 ];
 
 export const homePage = [

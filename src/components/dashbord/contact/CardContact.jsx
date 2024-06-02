@@ -63,7 +63,7 @@ export function CardContact() {
             </div>
             <div className="phone">
               <a
-                href={`tel:${item.phone_number || "+12136004952"}`}
+                href={`tel:${item.phone_number}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
