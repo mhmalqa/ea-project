@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { SocialMedia } from "./header/socialmedia";
 import SmoothScroll from "smooth-scroll";
+import profilePdf from "./Profile/Company_Profile_Elim_Alriyada.pdf";
 
 const Heading = ({
   title,
@@ -12,10 +13,10 @@ const Heading = ({
   btn_view,
 }) => {
   // تهيئة Smooth Scroll
-  const scroll = new SmoothScroll('a[href*="#"]', {
-    speed: 3000, // سرعة التمرير بالميلي ثانية
-    speedAsDuration: true, // استخدم السرعة كمدة للتمرير بدلاً من إعدادات التأخير
-  });
+  // const scroll = new SmoothScroll('a[href*="#"]', {
+  //   speed: 1000, // سرعة التمرير بالميلي ثانية
+  //   speedAsDuration: true, // استخدم السرعة كمدة للتمرير بدلاً من إعدادات التأخير
+  // });
 
   return (
     <>
@@ -31,9 +32,9 @@ const Heading = ({
         {btn_view && (
           // استخدام الرابط مع التمرير السلس
           <a
-            href="#moreAboutUs"
+            href={profilePdf}
             className="hero-btn"
-            onClick={() => scroll.animateScroll("#moreAboutUs")}
+            download="Company_Profile_Elim_Alriyada"
           >
             {btn_view}
           </a>

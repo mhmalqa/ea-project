@@ -2,7 +2,7 @@
 import Heading from "../../common/Heading";
 import "./hero.css";
 import { homePage } from "../../data/Data";
-import React, { useState } from "react";
+import React from "react";
 
 
 // Assuming this JSX section is inside a React component

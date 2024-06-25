@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import axios from "axios";
+import instance from "../../data/BaseUrl";
 import Modal from "react-modal";
 import "./ImageUpload.css";
-import { MainDashbord } from "../MainDashbord";
 
 const ImageUpload = () => {
   const [image, setImage] = useState(null);
@@ -11,7 +10,6 @@ const ImageUpload = () => {
   const [preview, setPreview] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
-  const baseUrl = "http://127.0.0.1:8000/api";
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -53,7 +51,7 @@ const ImageUpload = () => {
     formData.append("type", type);
 
     try {
-      const response = await axios.post(`${baseUrl}/posts`, formData, {
+      const response = await instance.post("/posts", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
@@ -100,6 +98,7 @@ const ImageUpload = () => {
               <input
                 type="text"
                 value={type}
+                required
                 onChange={handleTypeChange}
                 style={styles.input}
               />

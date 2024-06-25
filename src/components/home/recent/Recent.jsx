@@ -26,12 +26,16 @@ const Recent = ({ language, isHome, isDash }) => {
   return (
     <>
       <section className="recent padding">
-        <div className="container" style={!isHome ? { display: "none" } : null}>
+        <div
+          className="container"
+          style={
+            !isHome ? { display: "none" } : isDash ? { display: "none" } : null
+          }
+        >
           {/* استخدام العنوان والعنوان الفرعي المحدد بناءً على اللغة */}
 
           <HeaderRel language={language} />
           <Heading title={title} subtitle={slogan} />
-
           <div className="infor">
             <p>
               {language === "arabic" ? (
@@ -96,10 +100,7 @@ const Recent = ({ language, isHome, isDash }) => {
             </div>
           </div>
         </div>
-        <div
-          className="container"
-          style={!isHome && !isDash ? null : { display: "none" }}
-        >
+        <div className="container" style={!isHome ? null : { display: "none" }}>
           <HeaderRel language={language} />
         </div>
         {isDash ? "" : <Post language={language} />}
@@ -110,7 +111,7 @@ const Recent = ({ language, isHome, isDash }) => {
             {list.length})
           </p>
 
-          <RecentCard language={language} isHome={isHome} inDash={isDash} />
+          <RecentCard language={language} isHome={isHome} isdash={isDash} />
           <div className="dv-btn">
             <Link to="/real-estate" className="more">
               {/* <button className="btn-more" onClick={scrollToTop}>

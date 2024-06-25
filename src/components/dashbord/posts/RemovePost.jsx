@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import instance, { baseUrlWithoutApi } from "../../data/BaseUrl";
 import Modal from "react-modal";
 
 const PostsPage = () => {
   const [posts, setPosts] = useState([]);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [postIdToDelete, setPostIdToDelete] = useState(null);
-  const baseUrl = "http://127.0.0.1:8000";
 
   useEffect(() => {
     fetchPosts();
@@ -14,7 +13,7 @@ const PostsPage = () => {
 
   const fetchPosts = async () => {
     try {
-      const response = await axios.get(`${baseUrl}/api/showpost`);
+      const response = await instance.get("/showpost");
       setPosts(response.data);
     } catch (error) {
       console.error("Error fetching posts:", error);
@@ -23,7 +22,7 @@ const PostsPage = () => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`${baseUrl}/api/posts/${postIdToDelete}`);
+      await instance.delete(`/posts/${postIdToDelete}`);
       setPosts(posts.filter((post) => post.id !== postIdToDelete));
       setModalIsOpen(false);
     } catch (error) {
@@ -48,7 +47,7 @@ const PostsPage = () => {
             <p>{post.title}</p>
             <p>{post.body}</p>
             <img
-              src={`${baseUrl}/${post.image_path}`}
+              src={`${baseUrlWithoutApi}${post.image_path}`}
               alt={`Post ${post.id}`}
             />
             {/* <button onClick={() => openModal(post.id)}>Delete</button> */}

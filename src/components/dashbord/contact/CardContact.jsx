@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./cardcontant.css";
-import axios from "axios";
+import instance from "../../data/BaseUrl";
 
 export function CardContact() {
+  const token = localStorage.getItem("auth_token");
   function formatDate(dateString) {
     const date = new Date(dateString);
     const year = date.getFullYear();
@@ -15,12 +16,11 @@ export function CardContact() {
     return `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
   }
 
-  const baseUrl = "http://127.0.0.1:8000/api";
   const [data, setData] = useState([]);
 
   async function fetchData() {
     try {
-      const response = await axios.get(`${baseUrl}/dash`);
+      const response = await instance.get("/message/show");
       setData(response.data.Messages);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -36,7 +36,11 @@ export function CardContact() {
       const confirmed = window.confirm("هل أنت متأكد من حذف الرسالة؟");
       if (!confirmed) return; // توقف عن حذف إذا لم يتم تأكيد الحذف
 
-      await axios.delete(`${baseUrl}/dash/${id}`);
+      await instance.delete(`/message/delete/${id}`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       fetchData(); // تحديث البيانات بعد الحذف
     } catch (error) {
       console.log("Error deleting data:", error);

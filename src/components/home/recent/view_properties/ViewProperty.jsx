@@ -4,6 +4,7 @@ import Captions from "yet-another-react-lightbox/plugins/captions";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/captions.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import "yet-another-react-lightbox/plugins/counter.css";
 import "./viewproperty.css";
 
 import {
@@ -13,7 +14,6 @@ import {
   Thumbnails,
   Zoom,
 } from "yet-another-react-lightbox/plugins";
-import Heading from "../../../common/Heading";
 
 export function ViewProperty({ location }) {
   const [open, setOpen] = React.useState(false);
@@ -23,8 +23,6 @@ export function ViewProperty({ location }) {
     <>
       <section className="viewpropery">
         <div className="container">
-          {/* <Heading title={dir !== "rtl" ? item.name_en : item.name} /> */}
-
           <div className="view-img">
             <img src={item.cover} alt="" srcset="" />
             <div className="div-button">
@@ -36,19 +34,27 @@ export function ViewProperty({ location }) {
                 <i className="fa-solid fa-camera"></i>
                 {dir !== "rtl" ? "View More Photos" : "معاينة المزيد من الصور"}
               </button>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a
+                href={item.map_location}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <i className="fa-solid fa-location-dot"></i>
                 {dir !== "rtl" ? "Property Location" : "موقع العقار"}
+              </a>
+              <a href={item.filePdfRecent} className="hero-btn" download={item}>
+                <i class="fa-solid fa-file-pdf"></i>
+                تحميل ملف العقار
               </a>
             </div>
           </div>
           <div
             className="containt"
             style={{
-              [dir !== "rtl" ? "right" : "left"]: "10%",
+              [dir !== "rtl" ? "right" : "left"]: "8%",
             }}
           >
-            <p>{dir === "rtl" ? `${item.price} ريال` : `ريال ${item.price}`}</p>
+            <p>{dir === "rtl" ? item.price : item.price_en}</p>
             <span
               style={{
                 background:
@@ -58,8 +64,8 @@ export function ViewProperty({ location }) {
             >
               {dir !== "rtl" ? item.category_en : item.category}
             </span>
-            <div>
-              <a href="tel:+12136004952" className="whats">
+            <div className="content-option">
+              <a href="tel:+966508605772" className="whats">
                 <i className="fa-brands fa-whatsapp"></i>
                 {dir === "rtl" ? "واتساب" : "WhatsApp"}
               </a>
@@ -116,7 +122,7 @@ export function ViewProperty({ location }) {
                   <th className="th">
                     {dir !== "rtl" ? "Property area:" : "مساحة العقار:"}
                   </th>
-                  <td>150m</td>
+                  <td>{item.property_area}</td>
                 </tr>
                 <tr>
                   <th>
@@ -138,8 +144,8 @@ export function ViewProperty({ location }) {
                   <th className="th">
                     {dir !== "rtl" ? "Street direction:" : "اتجاه الشارع:"}
                   </th>
+                  <td>{dir !== "rtl" ? item.type_en : item.type}</td>
 
-                  <td></td>
                   <th>
                     <svg
                       width="24"
@@ -159,8 +165,9 @@ export function ViewProperty({ location }) {
                   <th className="th">
                     {dir !== "rtl" ? "Bathrooms:" : "الحمامات:"}
                   </th>
-
-                  <td>150m</td>
+                  <td>
+                    <td>{item.bathrooms}</td>
+                  </td>
                 </tr>
                 <tr>
                   <th>
@@ -183,7 +190,7 @@ export function ViewProperty({ location }) {
                     {dir !== "rtl" ? "Number of Bedrooms:" : "عدد غرف النوم:"}
                   </th>
 
-                  <td>{dir !== "rtl" ? item.type_en : item.type}</td>
+                  <td>{item.bedrooms}</td>
                   <th>
                     <svg
                       width="24"
@@ -205,7 +212,7 @@ export function ViewProperty({ location }) {
                       ? "Length of Land Piece:"
                       : "طول قطعة الأرض:"}
                   </th>
-                  <td>150m</td>
+                  <td>{item.land_length}</td>
                 </tr>
                 <tr>
                   <th>
@@ -227,7 +234,9 @@ export function ViewProperty({ location }) {
                   <th className="th">
                     {dir !== "rtl" ? "Property Age:" : "عمر العقار:"}
                   </th>
-                  <td>{dir !== "rtl" ? item.type_en : item.type}</td>
+                  <td>
+                    {dir !== "rtl" ? item.property_age_en : item.property_age}
+                  </td>
                   <th>
                     <svg
                       width="24"
@@ -247,7 +256,7 @@ export function ViewProperty({ location }) {
                   <th className="th">
                     {dir !== "rtl" ? "Street Width:" : "عرض الشارع:"}
                   </th>
-                  <td>150m</td>
+                  <td>{item.street_width}</td>
                 </tr>
                 <tr>
                   <th>
@@ -269,9 +278,7 @@ export function ViewProperty({ location }) {
                   <th className="th">
                     {dir !== "rtl" ? "Land Width:" : "عرض قطعة الأرض:"}
                   </th>
-                  <td colSpan={3}>
-                    {dir !== "rtl" ? item.type_en : item.type}
-                  </td>
+                  <td colSpan={3}>{item.land_width}</td>
                 </tr>
               </table>
             </div>
@@ -281,7 +288,10 @@ export function ViewProperty({ location }) {
               <p>{dir !== "rtl" ? item.description_en : item.description}</p>
             </div>
             <hr />
-            <h4>{dir !== "rtl" ? "License Number" : "رقم الترخيص"}</h4>
+            <h4>
+              {dir !== "rtl" ? "License Number" : "رقم الترخيص"} :{" "}
+              {item.license_number}
+            </h4>
           </div>
 
           <Lightbox
@@ -294,18 +304,13 @@ export function ViewProperty({ location }) {
               Counter,
             ]}
             open={open}
+            counter={{
+              container: {
+                style: { top: "0", bottom: "auto", left: "auto", right: "0" },
+              },
+            }}
             close={() => setOpen(false)}
-            slides={[
-              {
-                src: "https://media.istockphoto.com/id/1469952025/photo/a-business-person-is-working-in-a-cafe-at-night-using-a-tablet-device-and-a-stylus-to-look-up.webp?b=1&s=170667a&w=0&k=20&c=QSMWCuH5Wde2WQM8JJHz6QP2t5DNljUpxZ2J84M37Jg=",
-              },
-              {
-                src: "https://media.istockphoto.com/id/924994456/tr/foto%C4%9Fraf/sokakta-cep-telefonu-kullanan-kad%C4%B1n.jpg?s=2048x2048&w=is&k=20&c=HHc1tTeBHIkH1s4VQAcmplFcCkNdm2_ixLdTxMamdf0=",
-              },
-              {
-                src: "https://media.istockphoto.com/id/1469952025/photo/a-business-person-is-working-in-a-cafe-at-night-using-a-tablet-device-and-a-stylus-to-look-up.webp?b=1&s=170667a&w=0&k=20&c=QSMWCuH5Wde2WQM8JJHz6QP2t5DNljUpxZ2J84M37Jg=",
-              },
-            ]}
+            slides={item.imgs}
           />
         </div>
       </section>

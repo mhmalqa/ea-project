@@ -1,6 +1,6 @@
 import "./urls.css";
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import instance from "../../data/BaseUrl";
 
 export function Urls() {
   const [data, setData] = useState({
@@ -18,8 +18,7 @@ export function Urls() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const baseUrl = "http://127.0.0.1:8000/api";
-        const response = await axios.get(`${baseUrl}/urls`);
+        const response = await instance.get("/urls");
         const retrievedData = response.data;
 
         const newData = {};
@@ -37,7 +36,6 @@ export function Urls() {
 
   const sendMessage = async (name, url) => {
     try {
-      const baseUrl = "http://127.0.0.1:8000/api";
       const payload = {
         account_name: name,
         account_url: url,
@@ -50,7 +48,7 @@ export function Urls() {
             : "financial_services",
       };
 
-      const response = await axios.post(`${baseUrl}/urls/${name}`, payload);
+      const response = await instance.post(`/urls/${name}`, payload);
 
       if (response.status === 200) {
       } else {

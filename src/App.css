@@ -15,7 +15,7 @@ html {
 }
 
 .container {
-  max-width: 80%;
+  max-width: 85%;
   margin: auto;
 }
 .flex {
@@ -227,7 +227,7 @@ img {
   align-items: center; /* توسيط العنصر على المحور الرأسي */
 }
 
-.loader img  {
+.loader img {
   position: absolute;
   width: 120px;
   height: 120px;
@@ -236,7 +236,6 @@ img {
   animation: spin 3s linear infinite;
   -webkit-animation: spin 3s linear infinite;
 }
-
 
 @keyframes spin {
   0% {

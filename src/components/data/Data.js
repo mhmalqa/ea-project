@@ -1,4 +1,6 @@
-import axios from "axios";
+import instance, { baseUrlWithoutApi } from "./BaseUrl";
+
+
 export const nav = [
   {
     text_ar: "الصفحة الرئيسية",
@@ -57,7 +59,7 @@ export const homePage = [
     description: "لتحقيق نجاح مؤسستك",
     description2:
       "استشارات إدارية ومالية - تسويق  - استشارات حلول تمويل - خدمات تسويق عقاري",
-    btn_view: "اعرف المزيد . . .",
+    btn_view: "ملف تعريف الشركة",
   },
   {
     language: "english",
@@ -67,7 +69,7 @@ export const homePage = [
     description: "To achieve success for your institution",
     description2:
       "Administrative Consultations - Financial Consultations - Marketing - Development - Financing Solutions Consultations - Real Estate Marketing Services",
-    btn_view: "Learn more . . .",
+    btn_view: "Company profile",
   },
 ];
 
@@ -181,124 +183,102 @@ export const services = [
       "In the digital age, we offer a comprehensive range of traditional and digital marketing services, specifically designed to meet the needs of the Saudi market. We help you build effective marketing strategies that precisely target your local audience, enhance your brand identity, and achieve your strategic objectives.",
   },
 ];
+// const baseUrl = "http://127.0.0.1:8000/api";
+// const baseUrlWithoutApi = "http://127.0.0.1:8000";
 
-export const list = [
-  {
-    id: 1,
-    cover: process.env.PUBLIC_URL + "/images/list/p-1.png",
-    name: "شقه فاخره في فيلا بحي اليرموك",
-    name_en: "Luxurious Apartment in Yarmouk District",
-    location: "السعودية - جدة",
-    location_en: "Saudi Arabia - Jeddah",
-    category: "للبيع",
-    category_en: "For Sale",
-    price: "750000",
-    price_en: "750,000",
-    type: "فيلا",
-    type_en: "Villa",
-    description: "الوصف",
-    description_en: "description",
-    imgs: {},
-  },
-  {
-    id: 2,
-    cover: process.env.PUBLIC_URL + "/images/list/p-2.png",
-    name: "شقة في عمارة - الرياض حي طويق",
-    name_en: "Apartment in Building - Riyadh, Tawiq District",
-    location: "طويق الرياض, الرياض",
-    location_en: "Tawiq Riyadh, Riyadh",
-    category: "مباع",
-    category_en: "Sold",
-    price: "9,750",
-    price_en: "9,750",
-    type: "شقة",
-    type_en: "Apartment",
-    description: "الوصف",
-    description_en: "description",
-  },
-  {
-    id: 2,
-    cover: process.env.PUBLIC_URL + "/images/list/p-2.png",
-    name: "شقة في عمارة - الرياض حي طويق",
-    name_en: "Apartment in Building - Riyadh, Tawiq District",
-    location: "طويق الرياض, الرياض",
-    location_en: "Tawiq Riyadh, Riyadh",
-    category: "مباع",
-    category_en: "Sold",
-    price: "9,750",
-    price_en: "9,750",
-    type: "شقة",
-    type_en: "Apartment",
-    description: "الوصف",
-    description_en: "description",
-  },
-  {
-    id: 2,
-    cover: process.env.PUBLIC_URL + "/images/list/p-2.png",
-    name: "شقة في عمارة - الرياض حي طويق",
-    name_en: "Apartment in Building - Riyadh, Tawiq District",
-    location: "طويق الرياض, الرياض",
-    location_en: "Tawiq Riyadh, Riyadh",
-    category: "مباع",
-    category_en: "Sold",
-    price: "9,750",
-    price_en: "9,750",
-    type: "شقة",
-    type_en: "Apartment",
-    description: "الوصف",
-    description_en: "description",
-  },
-  {
-    id: 2,
-    cover: process.env.PUBLIC_URL + "/images/list/p-2.png",
-    name: "شقة في عمارة - الرياض حي طويق",
-    name_en: "Apartment in Building - Riyadh, Tawiq District",
-    location: "طويق الرياض, الرياض",
-    location_en: "Tawiq Riyadh, Riyadh",
-    category: "مباع",
-    category_en: "Sold",
-    price: "9,750",
-    price_en: "9,750",
-    type: "شقة",
-    type_en: "Apartment",
-    description: "الوصف",
-    description_en: "description",
-  },
-  {
-    id: 2,
-    cover: process.env.PUBLIC_URL + "/images/list/p-2.png",
-    name: "شقة في عمارة - الرياض حي طويق",
-    name_en: "Apartment in Building - Riyadh, Tawiq District",
-    location: "طويق الرياض, الرياض",
-    location_en: "Tawiq Riyadh, Riyadh",
-    category: "مباع",
-    category_en: "Sold",
-    price: "9,750",
-    price_en: "9,750",
-    type: "شقة",
-    type_en: "Apartment",
-    description: "الوصف",
-    description_en: "description",
-  },
-  {
-    id: 2,
-    cover: process.env.PUBLIC_URL + "/images/list/p-2.png",
-    name: "شقة في عمارة - الرياض حي طويق",
-    name_en: "Apartment in Building - Riyadh, Tawiq District",
-    location: "طويق الرياض, الرياض",
-    location_en: "Tawiq Riyadh, Riyadh",
-    category: "للبيع",
-    category_en: "Sold",
-    price: "9,750",
-    price_en: "9,750",
-    type: "شقة",
-    type_en: "Apartment",
-    description: "الوصف",
-    description_en: "description",
-  },
+// export const list = [
+//   {
+//     id: 1,
+//     cover: process.env.PUBLIC_URL + "/images/list/p-1.png",
+//     name: "شقة في عمارة - الرياض حي طويق",
+//     name_en: "Apartment in Building - Riyadh, Tuwaiq District",
+//     location: "طويق الرياض, الرياض",
+//     location_en: "Tuwaiq, Riyadh, Riyadh",
+//     category: "مباع",
+//     category_en: "Sold",
+//     price: "9,750 ريال",
+//     price_en: "9,750 SAR",
+//     type: "شقة",
+//     type_en: "Apartment",
+//     property_area: "10m",
+//     street_direction: "شمال",
+//     street_direction_en: "",
+//     bathrooms: "1m",
+//     bedrooms: "10m",
+//     land_length: "80s",
+//     property_age: "70s",
+//     property_age_en: "Apartment",
+//     street_width: "100m",
+//     land_width: "شقة",
+//     description: "الوصف",
+//     description_en: "Description",
+//     license_number: "110005789",
+//     map_location: "رابط موقع العقار على الخريطة",
+//     imgs: [
+//       // قم بإضافة روابط الصور هنا
+//       // على سبيل المثال:
+//       // { url: "/images/property1.jpg" },
+//       // { url: "/images/property2.jpg" },
+//       {
+//         src: "https://media.istockphoto.com/id/1469952025/photo/a-business-person-is-working-in-a-cafe-at-night-using-a-tablet-device-and-a-stylus-to-look-up.webp?b=1&s=170667a&w=0&k=20&c=QSMWCuH5Wde2WQM8JJHz6QP2t5DNljUpxZ2J84M37Jg=",
+//       },
+//       {
+//         src: "https://media.istockphoto.com/id/924994456/tr/foto%C4%9Fraf/sokakta-cep-telefonu-kullanan-kad%C4%B1n.jpg?s=2048x2048&w=is&k=20&c=HHc1tTeBHIkH1s4VQAcmplFcCkNdm2_ixLdTxMamdf0=",
+//       },
+//       {
+//         src: "https://media.istockphoto.com/id/1469952025/photo/a-business-person-is-working-in-a-cafe-at-night-using-a-tablet-device-and-a-stylus-to-look-up.webp?b=1&s=170667a&w=0&k=20&c=QSMWCuH5Wde2WQM8JJHz6QP2t5DNljUpxZ2J84M37Jg=",
+//       },
+//     ],
+//   },
+// ];
+const fetchRecentFromAPI = async () => {
+  try {
+    const response = await instance.get("/showrecent");
+    const recentsData = response.data;
 
-  // يمكنك استكمال القائمة بالعناصر الأخرى هنا...
-];
+    // Process the data to match the `list` object structure
+    const processedData = recentsData.map((recent) => ({
+      id: recent.id,
+      cover: `${baseUrlWithoutApi}${recent.cover}`, // التأكد من تضمين المسار الأساسي للصورة
+      filePdfRecent: `${baseUrlWithoutApi}${recent.filePdfRecent}`,
+      name: recent.name,
+      name_en: recent.name_en,
+      location: recent.location,
+      location_en: recent.location_en,
+      category: recent.category,
+      category_en: recent.category_en,
+      price: recent.price,
+      price_en: recent.price_en,
+      type: recent.type,
+      type_en: recent.type_en,
+      property_area: recent.property_area,
+      street_direction: recent.street_direction,
+      street_direction_en: recent.street_direction_en,
+      bathrooms: recent.bathrooms,
+      bedrooms: recent.bedrooms,
+      land_length: recent.land_length,
+      property_age: recent.property_age,
+      property_age_en: recent.property_age_en,
+      street_width: recent.street_width,
+      land_width: recent.land_width,
+      description: recent.description,
+      description_en: recent.description_en,
+      license_number: recent.license_number,
+      map_location: recent.map_location,
+      imgs: recent.recent_imags.map((image) => ({
+        src: `${baseUrlWithoutApi}${image.url}`,
+      })),
+    }));
+
+    return processedData;
+  } catch (error) {
+    console.error("Error fetching posts:", error);
+    return [];
+  }
+};
+
+// Call the function and export the posts object
+export const list = await fetchRecentFromAPI();
 
 export const awards = {
   english: [
@@ -363,17 +343,15 @@ export const awards = {
 //   post_adm: [],
 // };
 
-const baseUrl = "http://127.0.0.1:8000/api";
-
 const fetchPostsFromAPI = async () => {
   try {
-    const response = await axios.get(`${baseUrl}/showpost`);
+    const response = await instance.get("/showpost");
     const postsData = response.data;
 
     // Process the data to match the `posts` object structure
     const processedData = {
       post_rel: postsData.map((post) => ({
-        img: `http://127.0.0.1:8000/${post.image_path}`,
+        img: `${baseUrlWithoutApi}${post.image_path}`,
         alt: post.type,
         srcSet: "",
       })),

@@ -1,15 +1,14 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import instance from "../../data/BaseUrl";
 
 export function SocialMedia() {
-  const baseUrl = "http://127.0.0.1:8000/api";
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   async function fetchData() {
     try {
-      const response = await axios.get(`${baseUrl}/urls`);
+      const response = await instance.get('/urls');
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);

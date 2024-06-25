@@ -6,7 +6,7 @@ import { services } from "../data/Data";
 import Heading from "../common/Heading";
 import Post from "../home/post/Post";
 import "./CardServices.module.css";
-import axios from "axios";
+import instance from "../data/BaseUrl";
 
 const Services = ({ language, inHome }) => {
   const title =
@@ -15,15 +15,13 @@ const Services = ({ language, inHome }) => {
       : "Administrative and Financial Services and Financing Solutions";
 
   const subtitle = language === "arabic" ? "الخدمات" : "Services";
-
-  const baseUrl = "http://127.0.0.1:8000/api";
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   async function fetchData() {
     try {
-      const response = await axios.get(`${baseUrl}/urls`);
+      const response = await instance.get('/urls');
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);

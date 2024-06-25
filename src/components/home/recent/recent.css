@@ -116,6 +116,14 @@
 .edit-tool {
   padding-bottom: 2px;
 }
+.content-option {
+  display: flex;
+  align-items: center;
+  /* align-content: stretch; */
+}
+.img img {
+  aspect-ratio: 7/5;
+}
 
 @media screen and (max-width: 800px) {
   .logo-rel img {

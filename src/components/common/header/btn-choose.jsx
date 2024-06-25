@@ -1,19 +1,18 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-
 import { toggleLanguage } from "../../data/toggleLanguage";
 
-export function BtnChoose({ currentLanguage, setLanguage }) {
+export function BtnChoose({ setLanguage }) {
   const [selectedLanguage, setSelectedLanguage] = useState(
     localStorage.getItem("language") || "arabic"
   );
-  const homepage = process.env.PUBLIC_URL || "/"; // تحديد الرابط الرئيسي
 
   const handleLanguageToggle = (selectedLanguage) => {
     localStorage.setItem("language", selectedLanguage);
     setSelectedLanguage(selectedLanguage);
     toggleLanguage(selectedLanguage, setLanguage);
   };
+  const isLogin = localStorage.getItem("isLogin");
 
   return (
     <>
@@ -25,10 +24,14 @@ export function BtnChoose({ currentLanguage, setLanguage }) {
         <option value="arabic">عربي</option>
         <option value="english">English</option>
       </select>
-      <Link to="/maindashbord">
-        {" "}
-        <i class="fa-solid fa-gauge icon-dashbord"></i>
-      </Link>
+      {isLogin === 560174 ? (
+        <Link to="/maindashbord/messages">
+          {" "}
+          <i class="fa-solid fa-gauge icon-dashbord"></i>
+        </Link>
+      ) : (
+        ""
+      )}
     </>
   );
 }

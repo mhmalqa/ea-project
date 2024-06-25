@@ -3,11 +3,22 @@ import img from "../images/contactusar.jpg";
 import Back from "../common/Back";
 import "./contact.css";
 import Heading from "../common/Heading";
-import { useLocation } from "react-router-dom";
-import axios from "axios";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
+import instance from "../data/BaseUrl";
+
+
+
+const Alert = React.forwardRef(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
 
 const Contact = ({ inHome, language }) => {
+  const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("");
+  const [severity, setSeverity] = useState("success");
   const lan = document.querySelector("html").dir;
+
   if (inHome !== "true") {
     if (lan === "rtl") language = "arabic";
   }
@@ -21,6 +32,13 @@ const Contact = ({ inHome, language }) => {
     email: "",
     phone_number: "",
   });
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+    setOpen(false);
+  };
 
   const handelInputChange = (event) => {
     const { name, value } = event.target;
@@ -36,17 +54,18 @@ const Contact = ({ inHome, language }) => {
   }, [data]);
   const sendMessage = async () => {
     try {
-      const baseUrl = "http://127.0.0.1:8000/api";
       const fdata = new FormData();
       fdata.append("name", data.name);
       fdata.append("subject", data.subject);
       fdata.append("email", data.email);
       fdata.append("phone_number", data.phone_number);
 
-      const response = await axios.post(`${baseUrl}/message`, fdata);
+      const response = await instance.post("/message", fdata);
 
       if (response.status === 200) {
-        alert("تم ارسال ردك");
+        setMessage("تم إرسال البيانات بنجاح");
+        setSeverity("success");
+        setOpen(true);
         // تفريغ الحقول بعد الإرسال بنجاح
         setData({
           name: "",
@@ -55,10 +74,15 @@ const Contact = ({ inHome, language }) => {
           phone_number: "",
         });
       } else {
-        console.log("Error With Get Data");
+        setMessage("حدث خطأ أثناء إرسال البيانات");
+        setSeverity("error");
+        setOpen(true);
       }
     } catch (error) {
-      console.log(error);
+      console.error("حدث خطأ أثناء إرسال البيانات:", error);
+      setMessage("حدث خطأ أثناء إرسال البيانات");
+      setSeverity("error");
+      setOpen(true);
     }
   };
 
@@ -83,7 +107,15 @@ const Contact = ({ inHome, language }) => {
             <Heading title={isArabic ? "اتصل بنا" : "Contact Us"} subtitle="" />
           </>
         )}
-
+        <Snackbar open={open} autoHideDuration={2000} onClose={handleClose}>
+          <Alert
+            onClose={handleClose}
+            severity={severity}
+            sx={{ width: "100%" }}
+          >
+            {message}
+          </Alert>
+        </Snackbar>
         <br />
         <div className="container">
           <div className="shadow container-con">
@@ -110,7 +142,7 @@ const Contact = ({ inHome, language }) => {
                     name="subject"
                     onChange={handelInputChange}
                     type="text"
-                    placeholder={isArabic ? "الموضوع" : "Subject"}
+                    placeholder={isArabic ? "الموضوع *" : "Subject *"}
                     value={data.subject}
                     required
                     // value={service ?? ""}
@@ -122,7 +154,7 @@ const Contact = ({ inHome, language }) => {
                     name="name"
                     onChange={handelInputChange}
                     type="text"
-                    placeholder={isArabic ? "الاسم" : "Name"}
+                    placeholder={isArabic ? "الاسم *" : "Name *"}
                     value={data.name}
                     required
                   />
@@ -130,7 +162,7 @@ const Contact = ({ inHome, language }) => {
                     name="email"
                     onChange={handelInputChange}
                     type="email"
-                    placeholder={isArabic ? "البريد الإلكتروني" : "Email"}
+                    placeholder={isArabic ? "البريد الإلكتروني *" : "Email *"}
                     value={data.email}
                     required
                   />
@@ -140,7 +172,7 @@ const Contact = ({ inHome, language }) => {
                     name="phone_number"
                     onChange={handelInputChange}
                     type="tel"
-                    placeholder={isArabic ? "الهاتف" : "Phone"}
+                    placeholder={isArabic ? "الهاتف *" : "Phone *"}
                     value={data.phone_number}
                     required
                   />

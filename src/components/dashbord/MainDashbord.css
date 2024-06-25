@@ -1,10 +1,5 @@
 section.dashbord {
   position: relative; /* Necessary for the pseudo-element positioning */
-  background-image: url(./6407273_3303162.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
   height: 100vh;
   overflow-y: auto;
 }
@@ -60,7 +55,7 @@ section.dashbord {
 .image-name {
   display: flex;
   align-items: center;
-  width: 250px;
+  width: 300px;
   justify-content: space-around;
 }
 .dashbord-title {
@@ -131,8 +126,8 @@ section.dashbord {
   flex: 1;
   padding: 1rem;
   width: 100%;
-  background-color: #ffffff82;
-  backdrop-filter: blur(1px);
+  /* background-color: #ffffff99;
+  backdrop-filter: blur(1px); */
 }
 
 /* تخصيص شريط التمرير */

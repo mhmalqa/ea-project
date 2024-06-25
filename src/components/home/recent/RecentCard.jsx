@@ -3,36 +3,70 @@ import { Link } from "react-router-dom"; // استيراد Link
 import { list } from "../../data/Data";
 import "yet-another-react-lightbox/styles.css";
 import "../recent/Recent";
-import { ViewProperty } from "./view_properties/ViewProperty";
+import instance from "../../data/BaseUrl";
+import Modal from "react-modal";
 
-const RecentCard = ({ language, isHome, isDash }) => {
+const RecentCard = (props) => {
+  const [recentIdToDelete, setRecentIdToDelete] = useState(null);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [items, setItems] = useState(list); // حالة لتخزين قائمة العناصر
+
+  
+
+  const handleDelete = async () => {
+    try {
+      await instance.delete(`/recents/remove/${recentIdToDelete}`);
+      // تحديث حالة العناصر لإزالة العنصر المحذوف
+      setItems((prevItems) =>
+        prevItems.filter((item) => item.id !== recentIdToDelete)
+      );
+      setModalIsOpen(false);
+    } catch (error) {
+      console.error("Error deleting recent:", error);
+    }
+  };
+
+  const openModal = (recentId) => {
+    setRecentIdToDelete(recentId);
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
+
   const [randomItems, setRandomItems] = useState([]);
   const scrollToTop = () => {
     window.scrollTo(0, 0); // التمرير إلى أعلى الصفحة
   };
 
   useEffect(() => {
-    if (isHome && randomItems.length < 6) {
+    if (props.isHome && randomItems.length < 6) {
       const randomItemsArray = [];
       while (
         randomItemsArray.length < 6 &&
-        randomItemsArray.length < list.length
+        randomItemsArray.length < items.length
       ) {
-        const randomIndex = Math.floor(Math.random() * list.length);
+        const randomIndex = Math.floor(Math.random() * items.length);
         if (!randomItemsArray.includes(randomIndex)) {
           randomItemsArray.push(randomIndex);
         }
       }
       setRandomItems(randomItemsArray);
     }
-  }, [isHome, randomItems.length]);
+  }, [props.isHome, randomItems.length, items]);
 
-  const itemsToDisplay = isHome
-    ? list.length < 6
-      ? list
-      : randomItems.map((index) => list[index])
-    : list;
+  useEffect(() => {
+    setItems(() => {
+      if (props.isHome) {
+        return list.length < 6 ? list : randomItems.map((index) => list[index]);
+      } else {
+        return list;
+      }
+    });
+  }, [props.isHome, randomItems, list]);
 
+  const itemsToDisplay = items;
   return (
     <>
       <div className="content grid3 mtop">
@@ -49,10 +83,12 @@ const RecentCard = ({ language, isHome, isDash }) => {
             category_en,
             type_en,
           } = item;
-          const itemName = language === "english" ? name_en : name;
-          const itemLocation = language === "english" ? location_en : location;
-          const itemCategory = language === "english" ? category_en : category;
-          const itemType = language === "english" ? type_en : type;
+          const itemName = props.language === "english" ? name_en : name;
+          const itemLocation =
+            props.language === "english" ? location_en : location;
+          const itemCategory =
+            props.language === "english" ? category_en : category;
+          const itemType = props.language === "english" ? type_en : type;
           return (
             <div className="box shadow" key={index}>
               <div className="img">
@@ -76,12 +112,12 @@ const RecentCard = ({ language, isHome, isDash }) => {
                   <i className="fa fa-location-dot"></i> {itemLocation}
                 </p>
               </div>
-              <div
-                className="button flex"
-                // style={isDash ? null : { display: "none" }}
-              >
-                <div className="tools">
-                  <div class="tooltip">
+              <div className="button flex">
+                <div
+                  className="tools"
+                  style={props.isdash ? null : { display: "none" }}
+                >
+                  <div class="tooltip" onClick={() => openModal(item.id)}>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -99,11 +135,18 @@ const RecentCard = ({ language, isHome, isDash }) => {
                     <span class="tooltiptext">remove</span>
                   </div>
                   <div className="edit-tool">
-                    <i class="fa-solid fa-pen-to-square"></i>
+                    <Link
+                      to={{
+                        pathname: "/maindashbord/real-estate/update", // المسار المستهدف
+                        state: { item }, // البيانات المراد تمريرها
+                      }}
+                    >
+                      <i class="fa-solid fa-pen-to-square"></i>
+                    </Link>
                   </div>
                 </div>
 
-                <div style={!isDash ? null : { display: "none" }}>
+                <div style={!props.isdash ? null : { display: "none" }}>
                   {/* استخدام Link بدلاً من الزر */}
                   {/* {if(!isDash)} */}
                   <Link
@@ -113,7 +156,7 @@ const RecentCard = ({ language, isHome, isDash }) => {
                     }}
                   >
                     <button className="btn2" onClick={scrollToTop}>
-                      SAR {price}
+                      {price}
                     </button>
                   </Link>
                 </div>
@@ -122,9 +165,58 @@ const RecentCard = ({ language, isHome, isDash }) => {
             </div>
           );
         })}
+        <Modal
+          isOpen={modalIsOpen}
+          onRequestClose={closeModal}
+          contentLabel="Modal للتأكيد"
+          style={modalStyles}
+        >
+          <h2>تأكيد الحذف</h2>
+          <p>هل أنت متأكد أنك تريد حذف هذا العقار؟</p>
+          <button onClick={handleDelete} style={styles.button}>
+            نعم
+          </button>
+          <button
+            onClick={closeModal}
+            style={{ ...styles.button, backgroundColor: "#dc3545" }}
+          >
+            لا
+          </button>
+        </Modal>
       </div>
     </>
   );
+};
+
+const styles = {
+  button: {
+    padding: "10px 15px",
+    fontSize: "16px",
+    color: "#fff",
+    backgroundColor: "#007bff",
+    border: "none",
+    borderRadius: "4px",
+    cursor: "pointer",
+    margin: "5px",
+  },
+};
+const modalStyles = {
+  content: {
+    top: "50%",
+    left: "50%",
+    right: "auto",
+    bottom: "auto",
+    marginRight: "-50%",
+    transform: "translate(-50%, -50%)",
+    padding: "20px",
+    borderRadius: "10px",
+    border: "1px solid #ccc",
+    boxShadow: "0 0 10px rgba(0,0,0,0.2)",
+    width: "300px",
+    textAlign: "center",
+    fontSize: "12px",
+    lineHeight: "43px",
+  },
 };
 
 export default RecentCard;

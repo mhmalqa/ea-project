@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   useLocation,
+  useHistory,
 } from "react-router-dom";
 import Home from "../home/Home";
 import Header from "../common/header/Header";
@@ -14,7 +15,7 @@ import Blog from "../blog/Blog";
 import Services from "../services/Services";
 import Contact from "../contact/Contact";
 import { ViewProperty } from "../home/recent/view_properties/ViewProperty";
-import { LoginBage } from "../login/Login";
+import { Login } from "../auth/login/Login";
 import { RecentBage } from "../recentbage/RecentBage";
 import { MainDashbord } from "../dashbord/MainDashbord";
 
@@ -32,19 +33,40 @@ const Pages = () => {
 
 const PageContent = ({ language, setLanguage }) => {
   const location = useLocation(); // استخدام useLocation للحصول على المسار الحالي
+  const history = useHistory();
+  const [isLoggedIn, setIsLoggedIn] = useState(
+    localStorage.getItem("isLogin") === "560174" ? true : false
+  );
+
+  useEffect(() => {
+    const storedIsLoggedIn =
+      localStorage.getItem("isLogin") === "560174" ? true : false;
+    setIsLoggedIn(storedIsLoggedIn);
+
+    if (isLoggedIn !== storedIsLoggedIn) {
+      if (storedIsLoggedIn) {
+        history.push("/maindashbord");
+      } else {
+        history.push("/login");
+      }
+    }
+  }, [isLoggedIn, history]);
 
   useEffect(() => {
     const header = document.querySelector("header");
     const footer = document.querySelector("footer");
-
-    if (location.pathname.includes("/maindashbord")) {
+console.log(location.pathname);
+    if (location.pathname.includes("/maindashbord") && isLoggedIn) {
       if (header) header.style.display = "none";
       if (footer) footer.style.display = "none";
     } else {
       if (header) header.style.display = "block";
       if (footer) footer.style.display = "block";
     }
-  }, [location.pathname]); // مراقبة تغييرات المسار الحالي
+    if (location.pathname.includes("/login")) {
+      if (footer) footer.style.display = "none";
+    }
+  }, [location.pathname, isLoggedIn]); // مراقبة تغييرات المسار الحالي
 
   return (
     <>
@@ -56,7 +78,6 @@ const PageContent = ({ language, setLanguage }) => {
           path="/services"
           render={() => <Services language={language} />}
         />
-        <Route path="/login" render={() => <LoginBage language={language} />} />
         <Route
           exact
           path="/real-estate"
@@ -66,7 +87,20 @@ const PageContent = ({ language, setLanguage }) => {
         <Route path="/contact" component={Contact} />
         <Route path="/blog" component={Blog} />
         <Route path="/pricing" component={Pricing} />
-        <Route path="/maindashbord" component={MainDashbord} />
+
+        {!isLoggedIn && (
+          <Route
+            path="/login"
+            render={() => (
+              <Login language={language} setIsLoggedIn={setIsLoggedIn} />
+            )}
+          />
+        )}
+
+        {isLoggedIn && (
+          <Route path="/maindashbord" render={() => <MainDashbord />} />
+        )}
+
         <Route path="/*" render={() => <Home language={language} />} />
       </Switch>
       <Footer language={language} /> {/* يتم عرض Footer بشكل افتراضي */}
