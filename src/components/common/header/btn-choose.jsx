@@ -24,7 +24,7 @@ export function BtnChoose({ setLanguage }) {
         <option value="arabic">عربي</option>
         <option value="english">English</option>
       </select>
-      {isLogin === 560174 ? (
+      {isLogin == 560174 ? (
         <Link to="/maindashbord/messages">
           {" "}
           <i class="fa-solid fa-gauge icon-dashbord"></i>
